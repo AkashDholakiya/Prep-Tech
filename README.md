@@ -2,7 +2,7 @@
 Prep-Tech is nothing but a site to prepare for the interview using our Virtual Interview System
 <br>
 <br>
-git clone (repo link) <br>
+git clone https://github.com/AkashDholakiya/Prep-Tech.git <br>
 cd client <br>
 npm i <br>
 cd ../backend <br>
