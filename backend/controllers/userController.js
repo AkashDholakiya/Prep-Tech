@@ -18,18 +18,26 @@ schedule.scheduleJob('*/1 * * * *', async () => {
 
 const register = async (req, res) => {
     try {
+        
+        // const findusingEmail = await User.find({email : req.body.email});
+        // const findusingUsername = await User.find({username : req.body.username});
+        // if(findusingUsername){
+        //     return res.status(400).json({ success: false, message: "username Already Exists" });
+        // }
+        // if(findusingEmail){
+        //     return res.status(400).json({ success: false, message: "Account Already Exists" });
+        // }
 
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
+        
         const newUser = await User.create({
             username: req.body.username,
             email: req.body.email,
             password: hashedPassword, 
         })
-
         if (!newUser) {
-            return res.status(400).json({ success: false, message: "Cannot create new user" });
+            return res.status(400).json({ success: false, message: "Account Not Created" });
         }
         const data = {
             user: {
@@ -71,7 +79,7 @@ const register = async (req, res) => {
             });
         }
 
-        res.status(200).json({ success: true, token, username: req.body.username, message: "User has been registered successfully" });
+        res.status(200).json({ success: true, token, username: req.body.username, message: "Registration Successful"});
 
     } catch (error) {
         res.status(500).json({ success: false, message: "Internal server error", error: error.message });
