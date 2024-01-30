@@ -24,18 +24,25 @@ function Navbaar() {
     textDecoration: 'none',
     marginLeft: '20px'
   }
+  const NavStyle = {
+    color : "white",
+    textDecoration : "none",
+    fontSize : "20px"
+  }
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" variant='dark'>
         <Container>
-          <Navbar.Brand href="/" >Navbar</Navbar.Brand>
-          <Nav className='me-auto'>
-            <Link to='/' style={{ ...linkstyle, ...location.pathname === '/' ? addthis : nullstate}}>Home</Link>
-            <Link to='/about' style={{...linkstyle,...location.pathname === '/about' ? addthis : nullstate}}>About</Link>
-          </Nav>
-          <Nav>
-            {!localStorage.getItem('token') ? <Link to='/signup' style={{...linkstyle,...location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/forget-password' ? addthis : nullstate}}>Sign up</Link> : <Link style={linkstyle} onClick={handlelogout}>Logout</Link>}
-          </Nav>
+          <div>
+            <Link to='/' style={NavStyle}>Prep-Tech</Link>
+          </div>
+            <Nav>
+              <Link to='/about' style={{...linkstyle,...location.pathname === '/about' ? addthis : nullstate}}>About</Link>
+              <Link to='/roadmap' style={{...linkstyle,...location.pathname === '/roadmap' ? addthis : nullstate}}>Roadmap</Link>
+            </Nav>
+            <Nav>
+              {!localStorage.getItem('token') ? <Link to='/signup' style={{...linkstyle,...location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/forget-password' ? addthis : nullstate}}>Sign up</Link> : <Link style={linkstyle} onClick={handlelogout}>Logout</Link>}
+            </Nav>
         </Container>
       </Navbar>
     </>
