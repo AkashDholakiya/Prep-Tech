@@ -5,7 +5,7 @@ import cors from 'cors';
 import user from "./routes/userRoutes.js";
 
 const port = 4000 || process.env.PORT;
-const app = express();
+const app = express(); 
 
 dotenv.config(); 
 app.use(cors());       
@@ -17,7 +17,7 @@ app.use("/api/v1/auth", user);
 app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {
-    res.send("Hello World");
+    res.send("Hello World");   
 });
 
 app.listen(port, () => {

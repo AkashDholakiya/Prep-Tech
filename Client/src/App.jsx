@@ -13,6 +13,7 @@ import ForgotPass from './routes/ForgotPass'
 import Errorpage from './routes/ErrorPage'  
 // import Profile from './routes/Profile'
 import './App.css'
+import Roadmap from './routes/Roadmap'
      
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/signup' element={<Signup />} /> 
             <Route path='/login' element={<Login />} />
             <Route path='/forget-password' element={<ForgotPass />} />
+            <Route path='/roadmap' element={<Roadmap />} />
             {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}
           </Routes>
