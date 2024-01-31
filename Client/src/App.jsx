@@ -12,9 +12,9 @@ import Login from './routes/Login'
 import ForgotPass from './routes/ForgotPass'
 // import Dashboard from './Component/Dashboard'
 import Errorpage from './routes/ErrorPage'  
-// import Profile from './routes/Profile'
+// import Profile from './routes/Profile' 
 import './App.css'
-     
+      
 function App() {
   return (
     <div className="App">     
