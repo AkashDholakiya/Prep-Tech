@@ -19,7 +19,7 @@ app.use("/uploads", express.static("uploads"));
 app.get("/", (req, res) => {
     res.send("Hello World");   
 });
-
+ 
 app.listen(port, () => {
     dbconn(); // Connect to DB
     console.log("Connected to DB");

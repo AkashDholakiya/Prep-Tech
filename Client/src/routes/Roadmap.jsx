@@ -1,11 +1,9 @@
-import React from 'react'
-
-const Roadmap = () => {
+import React from "react"
+const roadmap = () => {
     return (
-      <div>
-        <h1>Roadmap</h1>
-      </div>
+    <div className="my-5">
+        <h1>This is RoadMap</h1>
+    </div>
     )
-  }
-  
-  export default Roadmap
+}
+export default roadmap

@@ -3,6 +3,7 @@ import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Home from './routes/Home'
 import Navbaar from './Component/Navbar'
 // import Footer from './Component/Footer'
+import Roadmap from './routes/Roadmap'
 import About from './routes/About'
 import ResetPassword from './routes/ResetPassword' 
 import VerifyEmail from './routes/VerifyEmail'
@@ -11,10 +12,9 @@ import Login from './routes/Login'
 import ForgotPass from './routes/ForgotPass'
 // import Dashboard from './Component/Dashboard'
 import Errorpage from './routes/ErrorPage'  
-// import Profile from './routes/Profile'
+// import Profile from './routes/Profile' 
 import './App.css'
-import Roadmap from './routes/Roadmap'
-     
+      
 function App() {
   return (
     <div className="App">     
@@ -24,6 +24,7 @@ function App() {
           <Routes>   
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/roadmap" element={<Roadmap/>}/>
             <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
             <Route path="/verify/:id/:token" element={<VerifyEmail />} />
             <Route path="/errorpage" element={<Errorpage />} />

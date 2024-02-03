@@ -4,6 +4,7 @@ Prep-Tech is nothing but a site to prepare for the interview using our Virtual I
 <br>
 git clone https://github.com/AkashDholakiya/Prep-Tech.git <br>
 cd client <br>
+npm run both <br>
 npm i <br>
 cd ../backend <br>
 npm i <br>

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+*{
+  background-color: rgb(33, 37, 41);
+  color: white;
+  font-family: 'Urbanist', sans-serif;  
+}
+
 .App {
   text-align: center;
 }
@@ -12,6 +19,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;
