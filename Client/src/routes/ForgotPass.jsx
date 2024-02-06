@@ -38,14 +38,13 @@ const ForgotPass = (props) => {
     return (
         <div className="outsider">
             <div className='logsig'>
-                <h1 className='my-2'>Forgot Password</h1>
                 <form onSubmit={handle}>
                     <div className="mb-2">
                         <label htmlFor="text" className="form-label"></label>
-                        <input type="email" className="form-control" value={cred.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" style={{width:'400px'}} placeholder='Email'/>
+                        <input type="email" className="form-control" value={cred.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" placeholder='Email'/>
                     </div>
                     <div className='center'> 
-                        <p className='my-2' style={{fontSize:'15px'}}>click me to <Link className='link' to={'/signup'}>Sign up</Link></p>
+                        <p className='my-2' style={{fontSize:'15px'}}>click me to <Link className='link' onClick={() => {props.setshowsignup(true); props.setshowforgot(false)}}>Sign up</Link></p>
                     </div>
                     <div className="submit">
                     <button type="submit" className="mybtn btn btn-primary my-2">Send</button>
