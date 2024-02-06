@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate,Link } from 'react-router-dom'
 import '../css/signup.css'
-import {AiOutlineEyeInvisible} from 'react-icons/ai'
-import {AiOutlineEye} from 'react-icons/ai'
+
 
 const Login = (props) => {
     const [cred, setcred] = useState({ nameemail: '', password: ''});
@@ -46,13 +45,10 @@ const Login = (props) => {
     const onChange = (e) => {
         setcred({ ...cred, [e.target.name]: e.target.value })
     }
-    const addstyle = {
-        fontweight: 'bold'
-    }
     return (
         <div className="outsider">
         <div className='logsig'>
-            <h1 className='my-4'>Login</h1>
+            {/* <h1 className='my-4'>Login</h1> */}
             <form onSubmit={handle}>
                 <div className="mb-1">
                     <label htmlFor="nameemail" className="form-label"></label>
@@ -62,18 +58,13 @@ const Login = (props) => {
                 <label htmlFor="password" className="form-label"></label>
                     <div className="input-group passeye">
                         <input type="password" className="form-control" value={cred.password} onChange={onChange} id="password" name='password' placeholder='Password'/>
-                        {!eyeshow ? <span className='eye' onClick={() => {seteyeshow(!eyeshow)
-                        document.getElementById('password').type = eyeshow ? 'password' : 'text';}}><AiOutlineEyeInvisible/></span>
-                        : <span className='eye' onClick={() => {seteyeshow(!eyeshow)
-                        document.getElementById('password').type = eyeshow ? 'password' : 'text';
-                        }}><AiOutlineEye/></span>}
                     </div>
                 </div>
                 <div className="center my-3">
-                <Link className='link' to='/forget-password'>Forgot Password?</Link>
+                <Link className='link' onClick={() => {props.setshowforgot(true); props.setshowlogin(false)}}>Forgot Password?</Link>
                 </div>
                 <div className='center'>
-                    <p style={addstyle}>Don't Have an Account? <Link className='link' to='/signup'>Signup</Link></p>
+                    <p>Don't Have an Account? <Link className='link' onClick={() => {props.setshowsignup(true); props.setshowlogin(false)}}>Signup</Link></p>
                 </div>
                 <div className="submit">
                 <button type="submit" className="mybtn btn btn-primary my-2">Login</button>
