@@ -5,7 +5,6 @@ import '../css/signup.css'
 
 const Login = (props) => {
     const [cred, setcred] = useState({ nameemail: '', password: ''});
-    const [eyeshow, seteyeshow] = useState(false);
     let Navigate = useNavigate();
     const handle = async (e) => {
         let validation = true;
@@ -48,7 +47,6 @@ const Login = (props) => {
     return (
         <div className="outsider">
         <div className='logsig'>
-            {/* <h1 className='my-4'>Login</h1> */}
             <form onSubmit={handle}>
                 <div className="mb-1">
                     <label htmlFor="nameemail" className="form-label"></label>
