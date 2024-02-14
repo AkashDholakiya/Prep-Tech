@@ -1,13 +1,10 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import '../css/signup.css'  
-import {AiOutlineEyeInvisible} from 'react-icons/ai'
-import {AiOutlineEye} from 'react-icons/ai'
+
 
 const Signup = (props) => {
     const [cred, setcred] = useState({username : '',email : '',password : '',cpassword: ''})
-    const [eyeshow1, seteyeshow1] = useState(false);
-    const [eyeshow2, seteyeshow2] = useState(false);
 
     const handle = async (e) => { 
         let validation = true;
@@ -54,11 +51,11 @@ const Signup = (props) => {
     return (
         <div className='outsider'>
             <div className="logsig">
-                <h1 className='my-5'>Sign Up</h1>
+                {/* <h1 className='my-5'>Sign Up</h1> */}
                 <form onSubmit={handle}> 
                     <div className="mb-1">
                         {/* <label htmlFor="name" className="form-label"></label> */}
-                        <input type="name" className="form-control"  value={cred.name} onChange={onChange} id="username" name="username" aria-describedby="emailHelp" required placeholder='Username'/>
+                        <input type="name" className="form-control"  value={cred.name} onChange={onChange}  id="username" name="username" aria-describedby="emailHelp" required placeholder='Username'/>
                         <label htmlFor="email" className="form-label"></label>
                         <input type="email" className="form-control" value={cred.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" required placeholder='Email'/>
                     </div>
@@ -66,26 +63,16 @@ const Signup = (props) => {
                         <label htmlFor="password" className="form-label"></label>
                         <div className="input-group passeye">
                             <input type="password" className="form-control" value={cred.password} onChange={onChange} id="password" name='password' required placeholder='Password'/>
-                            {!eyeshow1 ? <span className='eye' onClick={() => {seteyeshow1(!eyeshow1)
-                            document.getElementById('password').type = eyeshow1 ? 'password' : 'text';}}><AiOutlineEyeInvisible/></span>
-                            : <span className='eye' onClick={() => {seteyeshow1(!eyeshow1)
-                            document.getElementById('password').type = eyeshow1 ? 'password' : 'text';
-                            }}><AiOutlineEye/></span>}
                         </div>  
                     </div>
                     <div className="mb-1">
                         <label htmlFor="cpassword" className="form-label"></label>
                         <div className="input-group passeye">
                             <input type="password" className="form-control" value={cred.cpassword} onChange={onChange} id="cpassword" name='cpassword' required placeholder='Confirm Password'/>
-                            {!eyeshow2 ? <span className='eye' onClick={() => {seteyeshow2(!eyeshow2)
-                            document.getElementById('cpassword').type = eyeshow2 ? 'password' : 'text';}}><AiOutlineEyeInvisible/></span>
-                            : <span className='eye' onClick={() => {seteyeshow2(!eyeshow2)
-                            document.getElementById('cpassword').type = eyeshow2 ? 'password' : 'text';
-                            }}><AiOutlineEye/></span>}
                         </div>
                     </div>
                     <div className='center'> 
-                        <p className='my-2' style={{fontSize:'15px'}}>Already Have an Account? <Link className='link' to='/login'>Login</Link></p>
+                        <p className='my-2' style={{fontSize:'15px'}}>Already Have an Account? <Link className='link' onClick={() => {props.setshowlogin(true); props.setshowsignup(false)}}>Login</Link></p>
                     </div>
                     <div className="submit">
                         <button type="submit" className=" mybtn btn btn-primary my-2">Sign Up</button>

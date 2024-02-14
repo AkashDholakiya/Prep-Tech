@@ -12,9 +12,9 @@ import Login from './routes/Login'
 import ForgotPass from './routes/ForgotPass'
 // import Dashboard from './Component/Dashboard'
 import Errorpage from './routes/ErrorPage'  
-// import Profile from './routes/Profile'
+// import Profile from './routes/Profile' 
 import './App.css'
-     
+      
 function App() {
   return (
     <div className="App">     
@@ -31,6 +31,7 @@ function App() {
             <Route path='/signup' element={<Signup />} /> 
             <Route path='/login' element={<Login />} />
             <Route path='/forget-password' element={<ForgotPass />} />
+            <Route path='/roadmap' element={<Roadmap />} />
             {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}
           </Routes>

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400&display=swap');
+.about-h1{
+    text-align: left;
+    font-weight: 400;
+}
+
+.about-h3{
+    text-align: left;
+}
+.about-p{
+    font-family: Urbanist;
+    font-weight: 100;
+    text-align: justify;
+    font-size: 19px;
+}
