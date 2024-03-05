@@ -14,7 +14,8 @@ import ForgotPass from './routes/ForgotPass'
 import Errorpage from './routes/ErrorPage'  
 // import Profile from './routes/Profile' 
 import './App.css'
-      
+import Ferm from './routes/Ferm'      
+import Backend1 from './routes/Backend1'
 function App() {
   return (
     <div className="App">     
@@ -32,6 +33,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/forget-password' element={<ForgotPass />} />
             <Route path='/roadmap' element={<Roadmap />} />
+            <Route path='/ferm' element={<Ferm />} />
+            <Route path='/backend1' element={<Backend1 />} />
             {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}
           </Routes>
