@@ -31,7 +31,7 @@ const storage = multer.diskStorage({
         const userId = req.user._id;
         const previousFileName = async () => {
             const user2 = await User.findById(userId);
-
+  
             if(user2.profileimg != null && user2.profileimg != '' && user2.profileimg != undefined){
                 fs.unlinkSync(uploadDirectory + "/" + user2.profileimg);
             }   
