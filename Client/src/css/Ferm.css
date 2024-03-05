@@ -18,14 +18,19 @@
     padding: 20px 16px 10px 10px;
  } 
   /* Add some padding inside the card container */
-  .container1 {
-    padding: 30px 16px 10px 10px;
-    background-color:  rgb(45, 13, 72);
-  }
+ 
   
   /* Optional: Add rounded corners to the card and image */
   .card {
     border-radius: 5px; /* 5px rounded corners */
+  }
+  .contentferm{
+    text-align: justify;
+    font-size: medium;
+
+  }
+  .row-md{
+    padding:20px 10px 10px 10px;
   }
   
  
