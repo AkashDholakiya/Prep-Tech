@@ -1,10 +1,11 @@
 import React from "react"
-import '../css/roadmap.css'
 import { Link } from "react-router-dom"
+import '../css/roadmap.css'
+ 
 const roadmap = () => {
     return (
         <>
-            <h1 className="my-4">ROADMAP</h1>
+        <h1 className="my-4">ROADMAP</h1>
             <h2 className="rbr my-4">Role Based Roadmaps</h2>
             <div className="container1">
                 <div className="col">

@@ -15,10 +15,9 @@ const Mockinter = (props) => {
         return <span>Browser doesn't support speech recognition.</span>;
     }
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const textIsEmpty = text.trim() === '';
         if(!text){
             alert('Text field should not be empty!');
             return;

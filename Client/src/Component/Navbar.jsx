@@ -44,9 +44,9 @@ function Navbaar() {
             <Link to='/' className='main_img'>Prep Tech</Link>
           </div>
           <Nav>
-            <Link to='/about' style={{ ...linkstyle, ...location.pathname === '/about' ? addthis : nullstate }}>About</Link>
             <Link to='/roadmap' style={{ ...linkstyle, ...location.pathname === '/roadmap' ? addthis : nullstate }}>Roadmap</Link>
-            <Link to='/ai-inter' style={{ ...linkstyle, ...location.pathname === '/ai-inter' ? addthis : nullstate }}>Ai-Mock-Interview</Link>
+            <Link to='/interview' style={{ ...linkstyle, ...location.pathname === '/interview' ? addthis : nullstate }}>Interview</Link>
+            <Link to='/about' style={{ ...linkstyle, ...location.pathname === '/about' ? addthis : nullstate }}>About</Link>
           </Nav>
           <Nav>
             {!localStorage.getItem('token') ? 
