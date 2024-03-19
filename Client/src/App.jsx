@@ -1,19 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Home from './routes/Home'
 import Navbaar from './Component/Navbar'
-// import Footer from './Component/Footer'
 import Roadmap from './routes/Roadmap'
 import About from './routes/About'
 import ResetPassword from './routes/ResetPassword' 
 import VerifyEmail from './routes/VerifyEmail'
-import Signup from './routes/Signup'
-import Login from './routes/Login'
-import ForgotPass from './routes/ForgotPass'
-// import Dashboard from './Component/Dashboard'
+import Mockinter from './routes/Mockinter'
 import Errorpage from './routes/ErrorPage'  
-// import Profile from './routes/Profile' 
-import './App.css'
+import Interview from './routes/Interview'
 import Ferm from './routes/Ferm'      
 import Backend1 from './routes/Backend1'
 import Fs from './routes/Fs'
@@ -30,7 +25,12 @@ import Csec from './routes/Cbs'
 import UXdesign from './routes/Usx'
 import ReactN from './routes/Rn'
 import GameDev from './routes/GameDev'
+
+import './App.css'
+
 function App() {
+  const [loader , setLoader] = useState(false);
+
   return (
     <div className="App">     
       <BrowserRouter>  
@@ -42,11 +42,8 @@ function App() {
             <Route path="/roadmap" element={<Roadmap/>}/>
             <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
             <Route path="/verify/:id/:token" element={<VerifyEmail />} />
-            <Route path="/errorpage" element={<Errorpage />} />
-            <Route path='/signup' element={<Signup />} /> 
-            <Route path='/login' element={<Login />} />
-            <Route path='/forget-password' element={<ForgotPass />} />
-            <Route path='/roadmap' element={<Roadmap />} />
+            <Route path='/ai-inter' element={<Mockinter loader={loader} setLoader={setLoader} />}/>
+            <Route path='/interview' element={<Interview/>} />
             <Route path='/ferm' element={<Ferm />} />
             <Route path='/backend1' element={<Backend1 />} />
             <Route path='/fs' element={<Fs/>} />
@@ -62,11 +59,11 @@ function App() {
             <Route path='/rn' element={<ReactN/>}/>
             <Route path='/uxd' element={<UXdesign/>}/>
             <Route path='/gd' element={<GameDev/>}/>
+            <Route path='*' element={<Errorpage />} />
             {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}
           </Routes>
         </div>
-          {/* <Footer/> */}
       </BrowserRouter> 
     </div>
   );

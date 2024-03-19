@@ -1,0 +1,30 @@
+.inter-head{
+    font-size: 3rem;
+    font-weight: 800;
+    background : linear-gradient(to bottom, purple, white);
+    background-clip: text;
+    color: transparent;
+}
+
+.selection-inter{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.ai-part{
+    width: 300px;
+    height: 300px;
+    margin-right: 100px;
+    border: 2px solid purple;
+}
+
+.ai-part > img{
+    color: white;
+}
+
+.p2p-part{
+    width: 300px;
+    height: 300px;
+    border: 2px solid purple;
+}

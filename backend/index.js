@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import dbconn from './dbConnect/dbConnection.js';
 import cors from 'cors';
 import user from "./routes/userRoutes.js";
+import ai from "./routes/aiRoutes.js";
 
 const port = 4000 || process.env.PORT;
 const app = express(); 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Import Routes
 app.use("/api/v1/auth", user);
+app.use("/api/v1/ai-call", ai);
 app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {

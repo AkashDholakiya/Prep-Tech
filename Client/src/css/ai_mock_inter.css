@@ -1,0 +1,82 @@
+.ai-main{
+    width: 100vw;
+    height: 90vh;
+}
+
+.area{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    overflow-y: auto;
+    /* text-align: justify; */
+    border: 3px groove white;
+}
+
+.form-sec{
+    position: relative;
+}
+
+.form-sec > input{
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-sec > button{
+    color: black;
+    height: 100%;
+    width: 3.5%;
+    border: none;
+    font-size: 20px;
+    background-color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.form-sec > button:hover{
+    box-shadow: 0px 0px 3px grey;
+    background-color: black;
+    color: white;
+}
+
+.btn-sec{
+    flex-direction: row-reverse;
+}
+
+.btn-sec > button{
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+    transition: all 0.25s ease-in-out;
+}
+
+.btn-sec > button:nth-child(3):hover{
+    box-shadow: 0px 0px 10px green;
+    border: 2px solid green;
+}
+.btn-sec > button:nth-child(2):hover{
+    box-shadow: 0px 0px 10px yellow;
+    border: 2px solid yellow;
+}
+.btn-sec > button:nth-child(1):hover{
+    box-shadow: 0px 0px 10px red;
+    border: 2px solid red;
+}
+
+.main-inter-part{
+    height: 100%;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.user-side{
+    text-align: right;
+}
+.ai-side{
+    text-align: left;
+}

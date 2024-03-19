@@ -1,6 +1,7 @@
 import React from "react"
-import '../css/roadmap.css'
 import { Link } from "react-router-dom"
+import '../css/roadmap.css'
+ 
 const roadmap = () => {
     return (
         <>

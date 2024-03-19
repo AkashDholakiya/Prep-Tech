@@ -17,17 +17,15 @@ function Navbaar() {
   const addthis = { color: 'white' }
   const nullstate = { color: '#949494' }
   const navigate = useNavigate()
+
   const handlelogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('username')
     navigate('/')
     window.location.reload();
   }
+
   const location = useLocation()
-  const path = location.pathname
-  if (localStorage.getItem('username') && (path === '/signup' || path === '/login' || path === '/forget-password' || path === '/reset-password/:id/:token' || path === '/verify/:id/:token')) {
-    navigate('/')
-  }
 
   const linkstyle = {
     color: '#949494',
@@ -46,8 +44,9 @@ function Navbaar() {
             <Link to='/' className='main_img'>Prep Tech</Link>
           </div>
           <Nav>
-            <Link to='/about' style={{ ...linkstyle, ...location.pathname === '/about' ? addthis : nullstate }}>About</Link>
             <Link to='/roadmap' style={{ ...linkstyle, ...location.pathname === '/roadmap' ? addthis : nullstate }}>Roadmap</Link>
+            <Link to='/interview' style={{ ...linkstyle, ...location.pathname === '/interview' ? addthis : nullstate }}>Interview</Link>
+            <Link to='/about' style={{ ...linkstyle, ...location.pathname === '/about' ? addthis : nullstate }}>About</Link>
           </Nav>
           <Nav>
             {!localStorage.getItem('token') ? 
