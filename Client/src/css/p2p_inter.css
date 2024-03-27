@@ -1,0 +1,14 @@
+.p2p-main{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 90vh;
+}
+
+.video-section{
+    display: flex;
+    justify-content: center;
+}

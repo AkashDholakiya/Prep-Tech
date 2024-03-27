@@ -1,6 +1,5 @@
-// Home.js
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/home.css'
 
 const Home = () => {
@@ -19,9 +18,9 @@ const Home = () => {
         <h2>Categories</h2>
         {/* Add links or components for featured content */}
       </section>
-      <a href='/About' className='discolight'>
+      <Link to='/roadmap' className='discolight'>
           Get your Roadmap
-        </a>
+        </Link>
         
       <footer>
         <p>&copy; 2024 Interview Preparation Hub</p>

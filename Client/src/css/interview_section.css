@@ -1,5 +1,5 @@
 .inter-head{
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
     background : linear-gradient(to bottom, purple, white);
     background-clip: text;
@@ -12,19 +12,21 @@
     justify-content: center;
 }
 
-.ai-part{
+.ai-svg {
     width: 300px;
     height: 300px;
-    margin-right: 100px;
-    border: 2px solid purple;
+    margin-right: 200px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
 }
-
-.ai-part > img{
-    color: white;
-}
-
-.p2p-part{
+ 
+.p2p-svg {
     width: 300px;
     height: 300px;
-    border: 2px solid purple;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
 }
+
+
+
+

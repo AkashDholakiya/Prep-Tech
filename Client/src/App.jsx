@@ -17,14 +17,15 @@ import Androiddev from './routes/Andriod'
 import PostG from './routes/Pgs'
 import DsAi from './routes/Ai'
 import Bcd from './routes/Blockchaindev'
-import Qa from './routes/Qa'
+// import Qa from './routes/Qa'
 import SWarc from './routes/Swarc'
 import ASPnet from './routes/Asp'
 import Flut from './routes/Flut'
 import Csec from './routes/Cbs'
 import UXdesign from './routes/Usx'
+import P2PInter from './routes/P2PInter'
 import ReactN from './routes/Rn'
-import GameDev from './routes/GameDev'
+import GameDev from './routes/GameDev' 
 
 import './App.css'
 
@@ -43,6 +44,7 @@ function App() {
             <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
             <Route path="/verify/:id/:token" element={<VerifyEmail />} />
             <Route path='/ai-inter' element={<Mockinter loader={loader} setLoader={setLoader} />}/>
+            <Route path='/p2p-inter' element={<P2PInter />}/>
             <Route path='/interview' element={<Interview/>} />
             <Route path='/ferm' element={<Ferm />} />
             <Route path='/backend1' element={<Backend1 />} />

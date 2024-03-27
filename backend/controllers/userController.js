@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 // import schedule from 'node-schedule';    
 import dotenv from 'dotenv';
 const JWT_SECRET = process.env.JWT_SECRET;
-import nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer';    
 
 dotenv.config();
 
@@ -190,7 +190,7 @@ const ForgotPass = async (req, res) => {
     
         const setusertoken = await User.findByIdAndUpdate({_id:user._id},{verifytoken:token},{new:true})
     
-    
+     
         if(setusertoken){
             var transporter = nodemailer.createTransport({
                 service: 'gmail',

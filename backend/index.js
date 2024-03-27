@@ -4,6 +4,8 @@ import dbconn from './dbConnect/dbConnection.js';
 import cors from 'cors';
 import user from "./routes/userRoutes.js";
 import ai from "./routes/aiRoutes.js";
+import http from 'http';
+import { Server } from 'socket.io';
 
 const port = 4000 || process.env.PORT;
 const app = express(); 
@@ -22,7 +24,32 @@ app.get("/", (req, res) => {
     res.send("Hello World");   
 });
  
-app.listen(port, () => {
+const server = http.createServer(app);
+const io = new Server(server, {
+        cors: { 
+            origin: "http://localhost:3000",
+            methods: ["GET", "POST"]
+        } 
+});
+
+io.on("connection", (socket) => {
+
+    socket.emit("me", socket.id);
+
+    socket.on("disconnect", () => {
+        socket.broadcast.emit("callEnded");
+    });
+
+    socket.on("callUser", (data) => {
+        io.to(data.userToCall).emit("callUser", { signal: data.signalData, from: data.from, name: data.name });
+    })
+
+    socket.on("answerCall", (data) => {
+        io.to(data.to).emit("callAccepted", data.signal);
+    });
+
+}); 
+server.listen(port, () => {
     dbconn(); // Connect to DB
     console.log("Connected to DB");
     console.log(`Server running on port ${port}`);

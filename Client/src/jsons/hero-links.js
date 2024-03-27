@@ -19,7 +19,6 @@ const hero_json = [
     "Flutter",
     "React",
     "React-Native",
-    "React-Native",
  ]
 
  export default hero_json

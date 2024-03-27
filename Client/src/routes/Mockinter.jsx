@@ -15,6 +15,7 @@ const Mockinter = (props) => {
         return <span>Browser doesn't support speech recognition.</span>;
     }
 
+    console.log(transcript, listening);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

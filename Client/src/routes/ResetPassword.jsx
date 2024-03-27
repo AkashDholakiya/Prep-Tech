@@ -44,7 +44,7 @@ const ResetPassword = () => {
             console.log(json);
             if (json.success) {
                 alert("Password Changed Successfully");
-                Navigate('/login')
+                Navigate('/')
             } else {
                 alert("Invalid Credentials");
             }
