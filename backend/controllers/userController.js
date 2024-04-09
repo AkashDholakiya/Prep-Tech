@@ -1,24 +1,24 @@
 import User from '../models/user.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-// import schedule from 'node-schedule';    
+import schedule from 'node-schedule';    
 import dotenv from 'dotenv';
 const JWT_SECRET = process.env.JWT_SECRET;
 import nodemailer from 'nodemailer';    
 
 dotenv.config();
 
-// schedule.scheduleJob('*/1 * * * *', async () => {
-//     const oneHoursAgo = new Date();
-//     oneHoursAgo.setHours(oneHoursAgo.getHours() - 1);
-//     // console.log(oneHoursAgo.toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}));
-//     await User.deleteMany({verifyEmail: false,createdAt: { $lte: oneHoursAgo } });
-//     // console.log(dateObj.toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}));
-// });
- 
+schedule.scheduleJob('*/1 * * * *', async () => {
+    const oneHoursAgo = new Date(); 
+    oneHoursAgo.setHours(oneHoursAgo.getHours() - 1);
+    // console.log(oneHoursAgo.toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}));
+    await User.deleteMany({verifyEmail: false,createdAt: { $lte: oneHoursAgo } });
+    // console.log(dateObj.toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}));
+});  
+  
 const register = async (req, res) => {
     try {
-        
+           
         // const findusingEmail = await User.find({email : req.body.email});
         // const findusingUsername = await User.find({username : req.body.username});
         // if(findusingUsername){
@@ -190,7 +190,7 @@ const ForgotPass = async (req, res) => {
     
         const setusertoken = await User.findByIdAndUpdate({_id:user._id},{verifytoken:token},{new:true})
     
-     
+      
         if(setusertoken){
             var transporter = nodemailer.createTransport({
                 service: 'gmail',

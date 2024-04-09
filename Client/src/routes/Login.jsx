@@ -15,7 +15,7 @@ const Login = (props) => {
         
         if(validation){
             e.preventDefault();
-            const response = await fetch(`http://localhost:4000/api/v1/auth/login`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

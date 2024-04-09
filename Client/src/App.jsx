@@ -17,7 +17,7 @@ import Androiddev from './routes/Andriod'
 import PostG from './routes/Pgs'
 import DsAi from './routes/Ai'
 import Bcd from './routes/Blockchaindev'
-// import Qa from './routes/Qa'
+import Qa from './routes/Qa'
 import SWarc from './routes/Swarc'
 import ASPnet from './routes/Asp'
 import Flut from './routes/Flut'
@@ -61,6 +61,7 @@ function App() {
             <Route path='/rn' element={<ReactN/>}/>
             <Route path='/uxd' element={<UXdesign/>}/>
             <Route path='/gd' element={<GameDev/>}/>
+            <Route path='/qa' element={<Qa/>}/>
             <Route path='*' element={<Errorpage />} />
             {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}

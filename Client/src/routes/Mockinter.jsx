@@ -30,7 +30,7 @@ const Mockinter = (props) => {
         div.innerHTML = text;
         divref.current.appendChild(div);
         
-        const res = await fetch('http://localhost:4000/api/v1/ai-call/ques', {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/ai-call/ques`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

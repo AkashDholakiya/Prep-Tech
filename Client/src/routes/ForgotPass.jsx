@@ -12,7 +12,7 @@ const ForgotPass = (props) => {
         }
         if(validation){
             e.preventDefault();
-            const response = await fetch(`http://localhost:4000/api/v1/auth/forgot-password`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth/forgot-password`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
