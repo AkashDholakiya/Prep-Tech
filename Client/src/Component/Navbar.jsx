@@ -47,6 +47,8 @@ function Navbaar() {
             <Link to='/roadmap' style={{ ...linkstyle, ...location.pathname === '/roadmap' ? addthis : nullstate }}>Roadmap</Link>
             <Link to='/interview' style={{ ...linkstyle, ...location.pathname === '/interview' ? addthis : nullstate }}>Interview</Link>
             <Link to='/about' style={{ ...linkstyle, ...location.pathname === '/about' ? addthis : nullstate }}>About</Link>
+            <Link to='/quiz' style={{ ...linkstyle, ...location.pathname === '/quiz' ? addthis : nullstate }}>Quiz</Link>
+
           </Nav>
           <Nav>
             {!localStorage.getItem('token') ? 

@@ -1,37 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400&display=swap');
 .card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgb(235, 235, 235);
-    transition: 0.3s;
-    width: 180px; /* Adjust width as needed */
-    height: 190px;
-    background-color: rgb(45, 13, 72);
-    padding: 2px 20px 5px 5px;
-    text-overflow: clip;
-  }
-
-  .card:hover {
-    /* On mouse-over, add a deeper shadow */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-
+    transition: 0.3s;
+    width: 280px;
+    height:300px;
+    background: linear-gradient(to bottom, purple,rgb(1, 0, 3));
+    padding: 2px 20px 5px px;
+    text-overflow: clip;
+    /* border-radius: 20px !important; */
   }
- btn{
-    padding: 20px 16px 10px 10px;
- } 
-  /* Add some padding inside the card container */
- 
+  .grid-item{
+    height:auto;
+  }
+  .fig1{
+    font-size: 100px;
+    text-align: center;
+  }
+.mycontainer {
+  display: grid;
+  place-items: center; /* Center both horizontally and vertically */
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows:auto auto auto;
+  grid-template-columns:auto auto auto; 
+  max-height: max-content;
+}
+
+.grid-item {
+  padding: 10px;
+  align-items: center;
+}
+.myconthead{
+  text-align: center;
+  background: linear-gradient(to top,rgb(113, 35, 114),rgb(7, 1, 11));
   
-  /* Optional: Add rounded corners to the card and image */
+}
+.mycont{
+  text-align: justify;
+}
+  .card:hover {
+    box-shadow: 0 4px 8px 0 rgb(235, 235, 235);
+  }
+   b{
+    background: linear-gradient(to bottom, purple,rgb(0, 0, 0));
+  }
+.card-title{
+  background: linear-gradient(to bottom, purple,rgb(26, 15, 50));
+  color:aliceblue;
+}
   .card {
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 5px;
   }
   .contentferm{
+    font-family: Urbanist;
     text-align: justify;
-    font-size: medium;
-
+    font-size: 20px;
+    text-align: justify;
+   
+    
   }
-  .row-md{
-    padding:20px 10px 10px 10px;
+  .card-text {
+    background: linear-gradient(to bottom, purple, rgb(30, 15, 62));
+    height: 90%;
+    width: 100%;
+    align-content: center;
+}
+  .card-body{
+    background: linear-gradient(to bottom, rgb(18, 13, 35), rgb(18, 13, 35));
+  padding: 10px 10px 10px 10px;
+   height:250px;}
+  .mycont{
+    font-size: 20px;
   }
-  
- 
-  

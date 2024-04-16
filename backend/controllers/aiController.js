@@ -3,7 +3,7 @@
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 dotenv.config();
-
+ 
 
 const aiCall = async (req, res) => {
     const { message } = req.body;  

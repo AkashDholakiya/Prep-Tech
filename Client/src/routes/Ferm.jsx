@@ -1,7 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Ferm.css'
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { FaArrowLeft } from "react-icons/fa";
+import HTML from "../notes/HTML.pdf"
+import CSS from "../notes/CSS.pdf"
+import JAVASCRIPT from "../notes/JAVASCRIPT.pdf"
+
 export default function Ferm() {
+  const frontends = ["Html", "Css", "JavaScript"]
+  const frontPath = ["../notes/HTML.pdf", "../notes/CSS.pdf","../notes/JAVASCRIPT.pdf"]
+  const [changer, setChanger] = useState(false);
+  const [val, setval] = useState("");
+
+  const Fileaccess = (val)=> {
+    setChanger(!changer)
+
+    if(val === "JavaScript"){
+      setval(JAVASCRIPT)
+    }else if(val === "Css"){
+      setval(CSS)
+    }else if(val === "Html"){
+      setval(HTML)
+    }
+  }
+
+
+
+
+
+
   return (
     <>
       <div>
@@ -39,16 +66,29 @@ export default function Ferm() {
           <br />
           Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring frontend developers! 🌟 </h2>
       </div>
-      <div className="col">
-        <div className="row-md">
-          <div className="card">
-            <div className="container1">
-              <h3 className='con'><b>Learn HTML Basics</b>
-              </h3>
+      {!changer ? <div className="d-flex justify-content-center">
+        {frontends.map((val) => {
+          return (
+            <div className="row-md">
+              <div className="card" onClick={() => Fileaccess(val)}>
+                <div className="container1">
+                  <h3 className='con'><b>Learn {val} Basics</b></h3>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )
+        })}
       </div>
+        :
+
+        <div className='d-flex justify-content-center'>
+          <div className='mx-2 mt-2'>
+            <button className='bt-html' onClick={() => setChanger(!changer)}><FaArrowLeft /></button>
+          </div>
+
+          <embed src={val} width={1000} height={1200} />
+        </div>
+      }
     </>
   )
 }

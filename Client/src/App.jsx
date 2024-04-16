@@ -25,7 +25,8 @@ import Csec from './routes/Cbs'
 import UXdesign from './routes/Usx'
 import P2PInter from './routes/P2PInter'
 import ReactN from './routes/Rn'
-import GameDev from './routes/GameDev' 
+import GameDev from './routes/GameDev'
+import Quiz from './routes/Quiz'
 
 import './App.css'
 
@@ -61,7 +62,7 @@ function App() {
             <Route path='/rn' element={<ReactN/>}/>
             <Route path='/uxd' element={<UXdesign/>}/>
             <Route path='/gd' element={<GameDev/>}/>
-            <Route path='/qa' element={<Qa/>}/>
+            <Route path='/quiz' element={<Quiz/>}/>
             <Route path='*' element={<Errorpage />} />
             {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}
