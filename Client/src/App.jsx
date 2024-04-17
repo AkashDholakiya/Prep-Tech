@@ -43,9 +43,9 @@ function App() {
             <Route path="/roadmap" element={<Roadmap/>}/>
             <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
             <Route path="/verify/:id/:token" element={<VerifyEmail />} />
-            <Route path='/ai-inter' element={<Mockinter loader={loader} setLoader={setLoader} />}/>
-            <Route path='/p2p-inter' element={<P2PInter />}/>
             <Route path='/interview' element={<Interview/>} />
+            <Route path='/interview/ai-inter' element={<Mockinter loader={loader} setLoader={setLoader} />}/>
+            <Route path='/interview/p2p-inter' element={<P2PInter />}/>
             <Route path='/ferm' element={<Ferm />} />
             <Route path='/backend1' element={<Backend1 />} />
             <Route path='/fs' element={<Fs/>} />

@@ -39,12 +39,12 @@ const Interview = () => {
     <div>
       <h1 className='inter-head my-3'>Interview</h1>
       <div className="selection-inter">
-        <div className="ai-part" onClick={() => navigate('../ai-inter')}>
+        <div className="ai-part" onClick={() => navigate('ai-inter')}>
             <div className='ai-svg' onMouseOver={HandleAiMouse} onMouseOut={HandleAiMouseOut}>
               <Aisvg />
-            </div>
+            </div>  
         </div>
-        <div className="p2p-part" onClick={() => navigate('../p2p-inter')}>
+        <div className="p2p-part" onClick={() => navigate('p2p-inter')}>
             <div className='p2p-svg' onMouseOver={HandleP2pMouse} onMouseOut={HandleP2pMouseOut}>
               <P2psvg p2pcolor={p2pcolor}/>
             </div>

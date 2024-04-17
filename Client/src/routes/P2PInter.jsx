@@ -3,6 +3,7 @@ import { Container,Button } from 'react-bootstrap'
 import Peer from 'simple-peer'
 import io from 'socket.io-client'
 import '../css/p2p_inter.css'
+import { useNavigate } from 'react-router-dom'
 
 const socket = io.connect(`${process.env.REACT_APP_BACKEND_URL}`)
 
@@ -11,20 +12,26 @@ const P2PInter = () => {
   const [stream, setStream] = useState()
   const [receivingCall, setReceivingCall] = useState(false)
   const [caller, setCaller] = useState('')
+  const [callerName, setCallerName] = useState('')
   const [callerSignal, setCallerSignal] = useState()
   const [callAccepted, setCallAccepted] = useState(false)
   const [idToCall, setIdToCall] = useState('')
   const [callEnded, setCallEnded] = useState(false)
   const [name, setName] = useState(localStorage.getItem('username'))
-
+  const navigate = useNavigate();
+ 
   const myVideo = useRef()
   const userVideo = useRef()  
+  const connectionRef = useRef()
 
   useEffect(() => {  
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
       setStream(stream)
       myVideo.current.srcObject = stream
+    }).catch((err) => {
+      alert("camera or audio permission denied")
+      navigate("../interview")
     });
 
     socket.on('me', (id) => {
@@ -33,11 +40,17 @@ const P2PInter = () => {
 
     socket.on('callUser', (data) => {
       setReceivingCall(true)
+      console.log("callUser",data)
       setName(data.name)
       setCaller(data.from)
       setCallerSignal(data.signal)
     })
 
+    socket.on('callAccepted', (signal) => {
+      setCallerName(signal.callerName)
+    })
+
+    // eslint-disable-next-line
   }, [])
 
     const callUser = (id) => {
@@ -62,12 +75,12 @@ const P2PInter = () => {
 
       socket.on('callAccepted', (signal) => {
         setCallAccepted(true)
-        peer.signal(signal)
+        peer.signal(signal.signal)
       })
 
-  
+      connectionRef.current = peer
   }
-
+ 
   const answerCall = () => {
     setCallAccepted(true)
     const peer = new Peer({
@@ -77,7 +90,7 @@ const P2PInter = () => {
     })
 
     peer.on('signal', (data) => {
-      socket.emit('answerCall', { signal: data, to: caller })
+      socket.emit('answerCall', { signal: data, to: caller, callerName: localStorage.getItem('username') })
     })
 
     peer.on('stream', (stream) => {
@@ -86,15 +99,17 @@ const P2PInter = () => {
 
     peer.signal(callerSignal)
 
+    connectionRef.current = peer
   }
 
   const leaveCall = () => {
-    userVideo.current.srcObject.getTracks().forEach((track) => track.stop())
     setCallEnded(true)
+    connectionRef.current.destroy()
     window.location.reload()
   }
 
-
+  // console.log("me",me , "stream",stream , "receivingCall",receivingCall , "caller",caller , "callerSignal",callerSignal , "callAccepted",callAccepted , "idToCall",idToCall , "callEnded",callEnded , "name",name)
+  console.log("Caller", caller, "CallerName", callerName)
 
   return (
     <Container className='p2p-main'>
@@ -105,14 +120,24 @@ const P2PInter = () => {
             {localStorage.getItem('username')}
           </div>
         </div>
-        {(callAccepted && !callEnded) && (
-          <div style={{ position: 'relative' }}>
-            <video playsInline ref={userVideo} autoPlay style={{ width: '500px',transform:"scaleX(-1)" }} />
-            <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>
-              {name}
-            </div>  
-          </div>
-        )}
+        {caller !== '' ? 
+          (callAccepted && !callEnded) && (
+            <div style={{ position: 'relative' }}>
+              <video playsInline ref={userVideo} autoPlay style={{ width: '500px',transform:"scaleX(-1)" }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>
+                {name}
+              </div>  
+            </div>
+          )
+          : (callAccepted && !callEnded) && (
+            <div style={{ position: 'relative' }}>
+              <video playsInline ref={userVideo} autoPlay style={{ width: '500px',transform:"scaleX(-1)" }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>
+                {callerName}
+              </div>  
+            </div>
+          )  
+        }
       </div>
 
       <div>
