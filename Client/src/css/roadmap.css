@@ -2,10 +2,24 @@
   font-weight: lighter;
 }
 .btn{
- border-color: rgb(66, 0, 181);
+ border-color: rgb(145, 8, 204);
  text-shadow: 4%;
+ height: 90px;
+ width: 320px;
+ 
+ font-size:x-large
+}
+.beta{
+  padding-top: 25px;
 }
 .btn:hover{
     color: white;
-    background-color: rgb(29, 0, 77);
+    background-color: rgb(60, 8, 97);
 }
+.col{
+  padding: 10px 10px 10px 10px !important;
+}
+/* .brd{
+  border: 3px dotted white;
+  border-radius: 20px;;
+} */

@@ -1,17 +1,92 @@
-.card {
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400&display=swap');
+.col-xl-4{
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+}
+.alpha{
+  color:aliceblue;
+  text-decoration: none;
+}
+.container2{
+  padding: 10px 10px 10px 130px !important;
+}
+.card{
     /* Add shadows to create the "card" effect */
+   
+    height: 100px;
+    width: 150px;
+    background-color: rgb(45, 13, 72);
+    padding: 2px 10px 5px 5px;
+    text-overflow: clip;
+    /* max-width:max-content; */
+    /* border-radius: 20px !important; */
+  }
+  .card:hover{
     box-shadow: 0 4px 8px 0 rgb(235, 235, 235);
     transition: 0.3s;
-    width: 180px; /* Adjust width as needed */
-    height: 190px;
-    background-color: rgb(45, 13, 72);
-    padding: 2px 20px 5px 5px;
-    text-overflow: clip;
   }
+  .aligner{
+ float: left;
+  }
+  .myimgrm{
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+    height:950px;
+  }
+  .myimgf{
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
 
+  }
+  .myimgb{
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgb(0, 0, 0);
+    width: 800px;
+    height: 320px;
+  }
+  .myimgai{
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgb(0, 0, 0);
+    width: 840px;
+    height: 420px;
+  }
+  .card-title{
+    color: aliceblue;
+    background-color:rgb(46, 14, 77);
+    font-weight:700;
+    border-radius: 5px;
+  }
+  .fig1{
+    font-size: 100px;
+    text-align: center;
+  }
+.mycontainer {
+  display: grid;
+  place-items: center; /* Center both horizontally and vertically */
+  height: 100vh;
+  max-width:fit-content;
+}
+
+.content1{
+  font-size: 20px;
+}
+.myconthead{
+  text-align: center;
+  /* background: linear-gradient(to top,rgb(113, 35, 114),rgb(7, 1, 11)); */
+  font-weight: bolder;
+  font-size: 30px;
+}
+.mycont{
+  text-align: justify;
+}
   .card:hover {
     /* On mouse-over, add a deeper shadow */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(255, 251, 251, 0.2);
 
   }
  btn{
@@ -19,19 +94,51 @@
  } 
   /* Add some padding inside the card container */
  
-  
+  .prev::after {
+    border-style: solid;
+  }
+  .prev::after {
+    left: -22px;
+    border-color: transparent #0d5287 transparent transparent;
+    border-width: 11px;
+  }
+  .prev:hover::after {
+    border-right-color: #0585e8;
+  }
   /* Optional: Add rounded corners to the card and image */
   .card {
-    border-radius: 5px; /* 5px rounded corners */
+  background-color:rgba(79, 12, 162, 0.253);
+    height: auto;
+    width: 280px;
+     /* 5px rounded corners */
+  }
+  .ttl{
+    color:whitesmoke;
+  }
+  .bt:hover{
+background-color: rgb(82, 50, 109);
+color:aliceblue;
+
   }
   .contentferm{
     text-align: justify;
-    font-size: medium;
-
+    font-size:25px;
   }
-  .row-md{
-    padding:20px 10px 10px 10px;
+  .card-text {
+    background: linear-gradient(to bottom, rgb(74, 25, 107), rgb(30, 15, 62));
+    height: auto;
+    width: auto;
+    align-content: center;
+    font-size: 18px;
+    border-radius: 15px;
+}
+  .card-body{
+    background: linear-gradient(to bottom, rgb(18, 13, 35), rgb(18, 13, 35));
+  padding: 10px 10px 10px 10px;
+  height: auto;
+  width: auto;
+  border-radius: 15px;
   }
-  
- 
-  
+  .mycont{
+    font-size: 20px;
+  }

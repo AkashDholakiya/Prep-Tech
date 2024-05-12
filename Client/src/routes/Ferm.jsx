@@ -1,54 +1,107 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../css/Ferm.css'
-// import { Link } from "react-router-dom"
+import myimage from '../img/img4.jpg'
+import { Link } from 'react-router-dom'
 export default function Ferm() {
-  return (
-    <>
-      <div>
-        <h1>Frontend Development Roadmap</h1>
-      </div>
-      <div>
-        <h2 className='contentferm'>🚀 Frontend Developer Roadmap: <br />Your Path to Crafting User Interfaces
-          Welcome to the exciting world of frontend development! As a frontend developer, you’ll be the architect of delightful user experiences, shaping how websites and applications look, feel, and interact. Whether you’re just starting your journey or leveling up your skills, this roadmap will guide you through the essential concepts, technologies, and tools you need to master.<br />
-          🌟 What Is Frontend Development?<br />
-          Frontend development is the art of creating the visual and interactive elements that users directly interact with. It’s where design meets code, where pixels come alive, and where user satisfaction thrives. Imagine building responsive layouts, crafting seamless animations, and ensuring accessibility for all. That’s the magic of frontend development!<br />
-
-          🛤️ Navigating the Roadmap<br />
-          Our roadmap is divided into key areas, each representing a crucial aspect of frontend development. <br />
-          Buckle up as we explore:<br />
-          HTML: The backbone of web content. Learn to structure information using semantic HTML tags.<br />
-          CSS: The stylistic wizardry. Dive into layouts, responsive design, and CSS frameworks.<br />
-          JavaScript: The dynamic powerhouse. Understand DOM manipulation, fetch data, and build interactive features.<br />
-          Version Control: Git your code together! Explore Git, GitHub, and collaboration workflows.<br />
-          Web Security: Shield your apps from vulnerabilities. CORS, HTTPS, and best practices await.<br />
-          Package Managers: npm, yarn, and friends. Manage dependencies like a pro.<br />
-          CSS Preprocessors: Sass, PostCSS, and more. Level up your styling game.<br />
-          Frameworks: React, Angular, Vue.js, Svelte—pick your weapon and build amazing UIs.<br />
-          Testing: Jest, Cypress, and functional tests. Ensure your code behaves as expected.<br />
-          Authentication Strategies: JWT, OAuth, and more. Secure user interactions.<br />
-          TypeScript: The statically typed superhero. Level up your JavaScript.<br />
-          Server-Side Rendering: Next.js, Nuxt.js, and more. Optimize performance.<br />
-          Progressive Web Apps: Offline capabilities, notifications, and more.<br />
-          Performance Optimization: Lighthouse, DevTools, and best practices.<br />
-          Static Site Generators: Next.js, Nuxt.js, and more. Speed up content delivery.<br />
-          Mobile Applications: React Native, Flutter, and cross-platform magic.<br />
-          Desktop Applications: Electron, Tauri, and building for the desktop.<br />
-          Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br />
-
-          Ready to embark on your frontend adventure? Let’s dive in! 🎨👩‍💻
-          <br />
-          Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring frontend developers! 🌟 </h2>
-      </div>
-      <div className="col">
-        <div className="row-md">
-          <div className="card">
-            <div className="container1">
-              <h3 className='con'><b>Learn HTML Basics</b>
-              </h3>
+   
+    return (
+        <>
+ 
+<div className='container'>
+            <div>
+                <h1>Frontend Development Roadmap</h1>
             </div>
-          </div>
-        </div>
-      </div>
-    </>
-  )
+            <div className='container'>
+            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgf'/>
+            </div>
+            <div>
+                <h2 className='contentferm '><br/>
+                    Welcome to the exciting world of frontend development! As a frontend developer, you’ll be the architect of delightful user experiences, shaping how websites and applications look, feel, and interact. Whether you’re just starting your journey or leveling up your skills, this roadmap will guide you through the essential concepts, technologies and tools you need to master.</h2>
+                    <br></br>
+                    <br></br>
+                    <h2 className='myconthead'>
+                     What Is Frontend Development?</h2>
+                    <h2 className='contentferm'>
+                    Frontend development is the art of creating the visual and interactive elements that users directly interact with. It’s where design meets code, where pixels come alive, and where user satisfaction thrives. Imagine building responsive layouts, crafting seamless animations, and ensuring accessibility for all.That’s the magic of frontend development!<br/></h2>
+                   
+<h2 className='myconthead'>
+                     Navigating the Roadmap
+                     </h2>
+                     <h2 className='fig1'></h2>
+                    <h2 className='content1'>Our roadmap is divided into key areas, each representing a crucial aspect of frontend development. <br />
+                    Buckle up as we explore!<br />
+                    </h2>
+            </div>
+            <div className='container-'>
+            <div className="container2">
+            <div className="row align-items-start gx-1">
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                        <div class="card-body">
+                            <h5 class="card-title">HTML BASICS</h5>
+                            <a class="card-text alpha" type="button" href="/notes/HTML.pdf" target="_blank">Learn to structure information using semantic HTML tags and start your development journey.</a></div></div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                        <div class="card-body">
+                            <h5 class="card-title">CSS</h5>
+                            <a class="card-text alpha" type="button" href="/notes/CSS_Complete_Notes.pdf" target="_blank">The stylistic wizardry. Dive into layouts, responsive design and CSS frameworks to style your webpage. </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div className="card">
+                        
+                        <div className="card-body">
+                            <h5 className="card-title">Javascript</h5>
+                            <a class="card-text alpha" type="button" href="/notes/JS.pdf" target="_blank">The dynamic powerhouse. Understand DOM manipulation, fetch data, and build interactive features.</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div className="row align-items-start">
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                        <div class="card-body">
+                            <h5 class="card-title">Frameworks</h5>
+                            <a class="card-text alpha" type="button" href="https://builtin.com/articles/web-development-frameworks" target="_blank"> React, Angular, Vue.js, Svelte pick your weapon and build amazing UIs for your website.</a>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-xl-4 col-md-6">
+                        <div class="card">
+                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                        <div class="card-body">
+                            <h5 class="card-title">CSS Preprocessors </h5>
+                            <a class="card-text alpha" type="button" href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor" target="_blank">Bored with basic CSS?<br/>Use Sass, PostCSS, and more. Level up your styling game.</a>
+                            {/* <a href="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                        <div class="card-body">
+                            <h5 class="card-title">Git</h5>
+                            <a class="card-text alpha" type="button" href="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"> Continue your development journey,Git your code together! Explore Git,GitHub and collaboration workflows.</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+                </div>
+              </div>
+                <br></br>
+                <h2 className='mycont'>  Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br /></h2>
+              
+<h2 className='mycont'>                
+Ready to embark on your frontend adventure? Let’s dive in!</h2><h2 className='fig1'>👨🏼‍💻</h2>
+<h2 className='mycont'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring frontend developers! </h2>
+</div>        
+        </>
+    )
 }
