@@ -17,15 +17,8 @@ import Androiddev from './routes/Andriod'
 import PostG from './routes/Pgs'
 import DsAi from './routes/Ai'
 import Bcd from './routes/Blockchaindev'
-import Qa from './routes/Qa'
-import SWarc from './routes/Swarc'
-import ASPnet from './routes/Asp'
-import Flut from './routes/Flut'
-import Csec from './routes/Cbs'
-import UXdesign from './routes/Usx'
 import P2PInter from './routes/P2PInter'
 import ReactN from './routes/Rn'
-import GameDev from './routes/GameDev' 
 
 import './App.css'
 
@@ -54,17 +47,8 @@ function App() {
             <Route path='/pgs' element={<PostG/>}/>
             <Route path='/dsai' element={<DsAi/>}/>
             <Route path='/bcd' element={<Bcd/>}/>
-            <Route path='/swarc' element={<SWarc/>}/>
-            <Route path='/asp' element={<ASPnet/>}/>
-            <Route path='/flut' element={<Flut/>}/>
-            <Route path='/cbsec' element={<Csec/>}/>
             <Route path='/rn' element={<ReactN/>}/>
-            <Route path='/uxd' element={<UXdesign/>}/>
-            <Route path='/gd' element={<GameDev/>}/>
-            <Route path='/qa' element={<Qa/>}/>
             <Route path='*' element={<Errorpage />} />
-            {/* <Route path="/dashboard" element={<Dashboard  />} /> */}
-            {/* <Route path="/profile" element={<Profile />} /> */}
           </Routes>
         </div>
       </BrowserRouter> 

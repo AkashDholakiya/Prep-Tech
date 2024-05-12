@@ -1,11 +1,13 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
+import {Form } from 'react-bootstrap'
 import '../css/signup.css'  
 
 
 const Signup = (props) => {
-    const [cred, setcred] = useState({username : '',email : '',password : '',cpassword: ''})
+    const [cred, setcred] = useState({username : '',email : '',role: 'role',password : '',cpassword: ''})
 
+    console.log(cred);
     const handle = async (e) => { 
         let validation = true;
         const regexUsername = /^[a-zA-Z0-9]+([_]?[a-zA-Z0-9])*$/;
@@ -17,19 +19,23 @@ const Signup = (props) => {
             alert("Username must be alphanumeric");
             validation = false;
         }
+        else if(cred.role === 'role'){
+            alert("Please select a role");
+            validation = false;
+        }
         else if(cred.password !== cred.cpassword){
             alert("Password and Confirm Password must be same");
             validation = false;
         }
         if(validation){
             e.preventDefault();
-            const {username,email,password} = cred;
+            const {username,role,email,password} = cred;
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth/register`,{
                 method : 'POST',
                 headers : { 
                     'Content-Type' : 'application/json',
                 }, 
-                body : JSON.stringify({username,email,password})
+                body : JSON.stringify({username,role,email,password})
             })  
             const json = await response.json();
             console.log(json);  
@@ -48,16 +54,30 @@ const Signup = (props) => {
     const onChange = (e) => {
         setcred({...cred, [e.target.name] : e.target.value})
     }
+
+    const handleRole = (e) => {
+        setcred({...cred, role : e.target.value})
+    }  
     return (
         <div className='outsider'>
-            <div className="logsig">
+            <div className="logsig"> 
                 {/* <h1 className='my-5'>Sign Up</h1> */}
                 <form onSubmit={handle}> 
                     <div className="mb-1">
                         {/* <label htmlFor="name" className="form-label"></label> */}
                         <input type="name" className="form-control"  value={cred.name} onChange={onChange}  id="username" name="username" aria-describedby="emailHelp" required placeholder='Username'/>
+                    </div>
+                    <div className="mb-1">
                         <label htmlFor="email" className="form-label"></label>
                         <input type="email" className="form-control" value={cred.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" required placeholder='Email'/>
+                    </div>
+                    <div className="mb-1">
+                        <label htmlFor="Role" className="form-label"></label>
+                        <Form.Select id='select-role' className='form-control' aria-label="Default select example" onChange={handleRole} >
+                            <option value="role" >Role</option>
+                            <option value="Student" >Student</option>
+                            <option value="Interviewer" >Interviewer</option>
+                        </Form.Select>
                     </div>
                     <div className="mb-1">
                         <label htmlFor="password" className="form-label"></label>
@@ -75,7 +95,7 @@ const Signup = (props) => {
                         <p className='my-2' style={{fontSize:'15px'}}>Already Have an Account? <Link className='link' onClick={() => {props.setshowlogin(true); props.setshowsignup(false)}}>Login</Link></p>
                     </div>
                     <div className="submit">
-                        <button type="submit" className=" mybtn btn btn-primary my-2">Sign Up</button>
+                        <button type="submit" className="mybtn btn-primary my-2">Sign Up</button>
                     </div>
                 </form>
             </div>

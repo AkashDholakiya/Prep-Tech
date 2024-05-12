@@ -27,9 +27,9 @@ const Login = (props) => {
                 localStorage.setItem('token', json.token);
                 // localStorage.setItem('userid', json.data.id);
                 localStorage.setItem('username', json.data.username);
+                localStorage.setItem('role', json.data.role);
                 // localStorage.setItem('email', json.data.email);
                 // localStorage.setItem('profileimg', json.data.profileimg);
-                
                 alert("Login Successful"); 
                 Navigate("/");
                 window.location.reload();
@@ -65,7 +65,7 @@ const Login = (props) => {
                     <p>Don't Have an Account? <Link className='link' onClick={() => {props.setshowsignup(true); props.setshowlogin(false)}}>Signup</Link></p>
                 </div>
                 <div className="submit">
-                <button type="submit" className="mybtn btn btn-primary my-2">Login</button>
+                <button type="submit" className="mybtn btn-primary my-2">Login</button>
                 </div>
             </form>
         </div>

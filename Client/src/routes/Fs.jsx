@@ -24,7 +24,6 @@ export default function Fs() {
 <h2 className='myconthead'>
                      Navigating the Roadmap
                      </h2>
-                     <h2 className='fig1'></h2>
                     <h2 className='content1'>Our roadmap is divided into key areas, each representing a crucial aspect of Fullstack development. <br />
                     Buckle up as we explore!<br />
                     </h2>

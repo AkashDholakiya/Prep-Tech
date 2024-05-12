@@ -1,11 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Container,Button } from 'react-bootstrap'
+import { Form } from 'react-bootstrap';
+import { LuCopy } from "react-icons/lu";
 import Peer from 'simple-peer'
 import io from 'socket.io-client'
 import '../css/p2p_inter.css'
+import { MdOutlineCallEnd } from "react-icons/md";
 import { useNavigate } from 'react-router-dom'
 
-const socket = io.connect(`${process.env.REACT_APP_BACKEND_URL}`)
+let socket;
 
 const P2PInter = () => {
   const [me, setMe] = useState('')
@@ -18,14 +21,19 @@ const P2PInter = () => {
   const [idToCall, setIdToCall] = useState('')
   const [callEnded, setCallEnded] = useState(false)
   const [name, setName] = useState(localStorage.getItem('username'))
+  const [email, setEmail] = useState('')
   const navigate = useNavigate();
  
   const myVideo = useRef()
   const userVideo = useRef()  
   const connectionRef = useRef()
 
-  useEffect(() => {  
+  useLayoutEffect(() => {
+    socket = io.connect(process.env.REACT_APP_BACKEND_URL)
+  }, [])
 
+
+  useEffect(() => {  
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
       setStream(stream)
       myVideo.current.srcObject = stream
@@ -40,7 +48,6 @@ const P2PInter = () => {
 
     socket.on('callUser', (data) => {
       setReceivingCall(true)
-      console.log("callUser",data)
       setName(data.name)
       setCaller(data.from)
       setCallerSignal(data.signal)
@@ -49,6 +56,12 @@ const P2PInter = () => {
     socket.on('callAccepted', (signal) => {
       setCallerName(signal.callerName)
     })
+
+    socket.on('callEnded', () => {
+      setCallEnded(true)
+      window.location.reload()
+      } 
+    )
 
     // eslint-disable-next-line
   }, [])
@@ -103,36 +116,58 @@ const P2PInter = () => {
   }
 
   const leaveCall = () => {
-    setCallEnded(true)
-    connectionRef.current.destroy()
-    window.location.reload()
+    socket.emit('callEnded')
   }
 
-  // console.log("me",me , "stream",stream , "receivingCall",receivingCall , "caller",caller , "callerSignal",callerSignal , "callAccepted",callAccepted , "idToCall",idToCall , "callEnded",callEnded , "name",name)
-  console.log("Caller", caller, "CallerName", callerName)
+  const HandleMail = (e) => {
+    e.preventDefault();
+    if(me === ''){
+      alert("ID not found reload the page")
+    }
+    const email = e.target[0].value;
+    const data = {
+      username : localStorage.getItem('username'),
+      email: email,
+      id: me
+    }
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth/sendmail`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('token')
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      if(res.status === 200){
+        alert("Mail Sent Successfully")
+      }else{
+        alert("Something went wrong")
+      }
+    })
+  }
 
   return (
-    <Container className='p2p-main'>
-      <div className='video-section'>
-        <div style={{ position: 'relative' }}>
-          <video className='main-user-vid' playsInline muted ref={myVideo} autoPlay style={{ width: '500px',transform:"scaleX(-1)",marginRight:"1vw"}} />
-          <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>
+    <Container className={`${!callAccepted ? "p2p-main" : 'p2p-while-call'}`}>
+      <div className={`${callAccepted ? "after-call-vid" : 'video-section'}`}>
+        <div className={`${callAccepted ? "oncall-curr" : ''}`} style={{ position: 'relative' }}>
+          <video className="main-user-vid" playsInline muted ref={myVideo} autoPlay style={{ width: '800px',transform:"scaleX(-1)",marginRight:"1vw", borderRadius:"20px"}} />
+          <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius:"20px" }}>
             {localStorage.getItem('username')}
           </div>
         </div>
         {caller !== '' ? 
           (callAccepted && !callEnded) && (
-            <div style={{ position: 'relative' }}>
+            <div className={`${callAccepted ? "oncall-opp" : ''}`} style={{ position: 'relative' }}>
               <video playsInline ref={userVideo} autoPlay style={{ width: '500px',transform:"scaleX(-1)" }} />
-              <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius:"20px" }}>
                 {name}
               </div>  
             </div>
           )
           : (callAccepted && !callEnded) && (
-            <div style={{ position: 'relative' }}>
+            <div className={`${callAccepted ? "oncall-opp" : ''}`} style={{ position: 'relative' }}>
               <video playsInline ref={userVideo} autoPlay style={{ width: '500px',transform:"scaleX(-1)" }} />
-              <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius:"20px" }}>
                 {callerName}
               </div>  
             </div>
@@ -140,27 +175,52 @@ const P2PInter = () => {
         }
       </div>
 
-      <div>
-        <Button onClick={() => {
-          navigator.clipboard.writeText(me)
-          alert('Copied to clipboard')
-        }}>Copy id to ClipBoard</Button>
-      </div>
-      <div>
-        <input type='text' value={idToCall} onChange={(e) => setIdToCall(e.target.value)} />
-        <Button onClick={() => callUser(idToCall)}>Call</Button>
-      </div>
-      <div>
-        {receivingCall && !callAccepted ? (
-          <div>
-            <h1>{name} is calling...</h1>
-            <Button onClick={answerCall}>Answer</Button>
+      <div className={`${callAccepted ? "after-call-section" : 'call-section'}`}>
+        {!callAccepted && localStorage.getItem("role") === "Student" && 
+        <div> 
+          <h3 className='my-3'>Enter ID here</h3>
+          <div className="d-flex">
+            <input type='text' className='mx-2 form-control' value={idToCall} onChange={(e) => 
+              setIdToCall(e.target.value)} />
+            <button className='ai-button btn-primary' onClick={() => callUser(idToCall)}>Call</button>
           </div>
-        ) : null}
-      </div>
-      <div>
+        </div>}
+        <div className='my-5'>
+          {!receivingCall && localStorage.getItem("role") === "Interviewer" && 
+          <div className='d-flex flex-column align-items-center p-5 w-100'>
+          <div className='mail-to-candidate'>
+              <Form onSubmit={HandleMail}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className='blockquote'>Mail to the candidate</Form.Label>
+                  <Form.Control type="email" name='email' onChange={(e) => setEmail(e.target.value)}  value={email} placeholder="Enter email" />
+                </Form.Group>
+                <Button style={{width:"80px",height:"40px",fontSize:"18px"}} variant="primary" type="submit">
+                  Send
+                </Button>
+              </Form>
+          </div>
+          <h3 className='my-5'>OR</h3>
+          <div className='call-id-section'>
+            {me ? me : "ID not found reload the page"}
+            <button className='mx-2 id-btn' onClick={() => {
+              navigator.clipboard.writeText(me)
+              alert('Copied to clipboard')
+            }}><LuCopy /></button>
+          </div>
+          </div>}
+        </div>
+        <div>
+          {receivingCall && !callAccepted ? (
+            <div className='d-flex flex-column justify-content-center align-items-center'>
+              <h2 className='p-5 display-6'>{name} is calling...</h2>
+              <Button onClick={answerCall}>Answer</Button>
+            </div>
+          ) : null}
+        </div>
         {callAccepted && !callEnded ? (
-          <Button onClick={leaveCall}>End Call</Button>
+        <div className='end-call-sec'>
+            <button className='call-end' onClick={leaveCall}><MdOutlineCallEnd className='call-icon' /></button>
+        </div>
         ) : null}
       </div>
     </Container>

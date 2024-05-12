@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
+import React from 'react'
 import '../css/Ferm.css'
 import myimage from '../img/img4.jpg'
 import { Link } from 'react-router-dom'
 export default function Ferm() {
-   
+
     return (
         <>
  
@@ -20,16 +20,15 @@ export default function Ferm() {
                     <br></br>
                     <br></br>
                     <h2 className='myconthead'>
-                     What Is Frontend Development?</h2>
+                        What Is Frontend Development?</h2>
                     <h2 className='contentferm'>
                     Frontend development is the art of creating the visual and interactive elements that users directly interact with. It’s where design meets code, where pixels come alive, and where user satisfaction thrives. Imagine building responsive layouts, crafting seamless animations, and ensuring accessibility for all.That’s the magic of frontend development!<br/></h2>
                    <br/>
 <h2 className='myconthead'>
                      Navigating the Roadmap
                      </h2>
-                     <h2 className='fig1'></h2>
                     <h2 className='content1'>Our roadmap is divided into key areas, each representing a crucial aspect of frontend development. <br />
-                    Buckle up as we explore!<br />
+                        Buckle up as we explore!<br />
                     </h2>
             </div>
             <div className='container-'>
@@ -97,11 +96,11 @@ export default function Ferm() {
               </div>
                 <br></br>
                 <h2 className='mycont'>  Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br /></h2>
-              
-<h2 className='mycont'>                
-Ready to embark on your frontend adventure? Let’s dive in!</h2><h2 className='fig1'>👨🏼‍💻</h2>
-<h2 className='mycont'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring frontend developers! </h2>
-</div>        
+
+                <h2 className='mycont'>
+                    Ready to embark on your frontend adventure? Let’s dive in!</h2><h2 className='fig1'>👨🏼‍💻</h2>
+                <h2 className='mycont'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring frontend developers! </h2>
+            </div>
         </>
     )
 }

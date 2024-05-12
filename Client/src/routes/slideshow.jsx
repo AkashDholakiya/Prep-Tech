@@ -5,7 +5,7 @@ import '../css/slideshow.css';
 function MyComponent() {
     return (
         <div>
-            <img src={myImage} alt="My Image" className=' img-fluid align-items-center myimg1'/>
+            <img src={myImage} alt="My Img" className='img-fluid align-items-center myimg1'/>
         </div>
     );
 }

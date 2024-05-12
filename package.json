@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "react-pdf": "^8.0.2",
-    "react-slideshow-image": "^4.3.1"
-  }
-}

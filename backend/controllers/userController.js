@@ -33,6 +33,7 @@ const register = async (req, res) => {
         
         const newUser = await User.create({
             username: req.body.username,
+            role: req.body.role,
             email: req.body.email,
             password: hashedPassword, 
         })
@@ -111,7 +112,7 @@ const login = async (req, res) => {
         //     expires: token.expiresIn
         // }).status(200).json({ success: true, token, message: "User has been logged in successfully", data: { id: user._id, username: user.username, email: user.email } });
         
-        res.status(200).json({ success: true, token, message: "User has been logged in successfully", data: { id: user._id,profileimg:user.profileimg, username: user.username, email: user.email } });
+        res.status(200).json({ success: true, token, message: "User has been logged in successfully", data: { id: user._id,profileimg:user.profileimg, username: user.username, role: user.role ,email: user.email } });
 
     } catch (error) {
         res.status(500).json({ success: false, message: "Failed To login", error: error.message });
@@ -288,4 +289,47 @@ const VerifyEmail = async (req,res) => {
     }
 }
 
-export { register, login, getuser, EditUser,editprofileimage, DeleteUser, ForgotPass, validateUser, ResetPassword, VerifyEmail };
+const SendEmail = async (req,res) => {
+    const { username, email, id } = req.body;
+    try {
+        const user = await User.findOne({email: email});
+
+        if(!user){
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.USER_EMAIL,
+                pass: process.env.USER_PASSWORD
+            }
+        });
+
+        var mailOptions = {
+            from: process.env.USER_EMAIL,
+            to: email,
+            subject: 'Account Verification',
+            html: `
+            <h2>Account Verification</h2>
+            <p>Dear Student,<br>Mr, ${username} has invited you for interview copy the below id and join <a href="http://localhost:3000/interview/p2p-inter">here</a>, All the best!!</p>
+            <p>Interview ID : <b>${id}</b></p>
+            <h3>&#169; all right reserved</h3>`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+                res.status(500).json({ success: false, message: "Failed To send Email", error: error.message });
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.status(200).json({ success: true, message: "Email Sent Successfully" });
+            }
+        });
+
+    } catch (error) {
+        return res.status(500).json({ success: false, message: "Failed To fetch", error: error.message });
+    }
+}
+
+export { register, login, getuser, EditUser,editprofileimage, DeleteUser, ForgotPass, validateUser, ResetPassword, VerifyEmail, SendEmail };

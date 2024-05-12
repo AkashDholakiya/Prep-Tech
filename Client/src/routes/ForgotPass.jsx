@@ -47,7 +47,7 @@ const ForgotPass = (props) => {
                         <p className='my-2' style={{fontSize:'15px'}}>click me to <Link className='link' onClick={() => {props.setshowsignup(true); props.setshowforgot(false)}}>Sign up</Link></p>
                     </div>
                     <div className="submit">
-                    <button type="submit" className="mybtn btn btn-primary my-2">Send</button>
+                    <button type="submit" className="mybtn btn-primary my-2">Send</button>
                     </div>
                 </form>
             </div>

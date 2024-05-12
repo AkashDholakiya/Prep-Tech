@@ -10,7 +10,8 @@ import {
     validateUser,
     ResetPassword,
     VerifyEmail,
-    editprofileimage
+    editprofileimage,
+    SendEmail
 } from '../controllers/userController.js';
 import { verifyToken } from '../utils/verifyToken.js';
 import multer from 'multer';    
@@ -60,5 +61,6 @@ router.get('/reset-password/:id/:token', validateUser)
 router.post('/reset-password/:id/:token', ResetPassword)
 router.get('/verify/:id/:token', validateUser)
 router.post('/verify/:id/:token', VerifyEmail)
+router.post('/sendmail', verifyToken, SendEmail)
   
 export default router;

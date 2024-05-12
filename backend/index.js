@@ -36,9 +36,9 @@ io.on("connection", (socket) => {
 
     socket.emit("me", socket.id);
 
-    socket.on("disconnect", () => {
+    socket.on("callEnded", () => {
         socket.broadcast.emit("callEnded");
-    }
+        }
     );
 
     socket.on("callUser", (data) => {

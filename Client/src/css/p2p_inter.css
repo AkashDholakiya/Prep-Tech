@@ -1,14 +1,103 @@
 .p2p-main{
     display: flex;
-    justify-content: center;
-    align-self: center;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
     flex-wrap: wrap;
+    position: relative;
     width: 100vw;
     height: 90vh;
+}
+
+.p2p-while-call{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    overflow-y: hidden;
+}
+
+.after-call-vid{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 80%;
+    flex-direction: row-reverse; 
+    align-items: flex-start;
 }
 
 .video-section{
     display: flex;
     justify-content: center;
+}
+
+.call-id-section{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 1px 5px 5px;
+}
+
+.id-btn{
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+
+.oncall-curr{
+    width: 300px !important;
+}
+
+.oncall-curr > video{
+    width: 300px !important;
+    border-radius: 20px;
+}
+
+.oncall-opp{
+    width: 750px !important;
+}
+
+.oncall-opp > video{
+    border-radius: 20px;
+    width: 750px !important;
+}   
+
+.after-call-section{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.end-call-sec{
+    position: absolute;
+    bottom: 0;
+}
+
+.call-end{
+    border-radius: 20px;
+    padding: 5px 30px;
+    outline: none;
+    border: none;
+    background-color: red;
+    cursor: pointer;
+}
+
+.call-icon{
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.ai-button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #0d6efd;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
