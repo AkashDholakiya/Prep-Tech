@@ -12,7 +12,7 @@ export default function Ferm() {
                 <h1>Frontend Development Roadmap</h1>
             </div>
             <div className='container'>
-            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgf'/>
+            <img src={myimage} alt="imgbg" className='img-fluid align-items-center mx myimgf'/>
             </div>
             <div>
                 <h2 className='contentferm '><br/>
@@ -23,7 +23,7 @@ export default function Ferm() {
                      What Is Frontend Development?</h2>
                     <h2 className='contentferm'>
                     Frontend development is the art of creating the visual and interactive elements that users directly interact with. It’s where design meets code, where pixels come alive, and where user satisfaction thrives. Imagine building responsive layouts, crafting seamless animations, and ensuring accessibility for all.That’s the magic of frontend development!<br/></h2>
-                   
+                   <br/>
 <h2 className='myconthead'>
                      Navigating the Roadmap
                      </h2>
@@ -37,17 +37,17 @@ export default function Ferm() {
             <div className="row align-items-start gx-1">
                 <div class="col-xl-4 col-md-6">
                     <div class="card">
-                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                        
                         <div class="card-body">
                             <h5 class="card-title">HTML BASICS</h5>
-                            <a class="card-text alpha" type="button" href="/notes/HTML.pdf" target="_blank">Learn to structure information using semantic HTML tags and start your development journey.</a></div></div>
+                            <Link class="card-text alpha" type="button" to="/notes/HTML.pdf" target="_blank">Learn to structure information using semantic HTML tags and start your development journey.</Link></div></div>
                     </div>
                     <div class="col-xl-4 col-md-6">
                     <div class="card">
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">CSS</h5>
-                            <a class="card-text alpha" type="button" href="/notes/CSS_Complete_Notes.pdf" target="_blank">The stylistic wizardry. Dive into layouts, responsive design and CSS frameworks to style your webpage. </a>
+                            <Link class="card-text alpha" type="button" to="/notes/CSS_Complete_Notes.pdf" target="_blank">The stylistic wizardry. Dive into layouts, responsive design and CSS frameworks to style your webpage. </Link>
                             
                         </div>
                     </div>
@@ -57,7 +57,7 @@ export default function Ferm() {
                         
                         <div className="card-body">
                             <h5 className="card-title">Javascript</h5>
-                            <a class="card-text alpha" type="button" href="/notes/JS.pdf" target="_blank">The dynamic powerhouse. Understand DOM manipulation, fetch data, and build interactive features.</a>
+                            <Link class="card-text alpha" type="button" to="/notes/JS.pdf" target="_blank">The dynamic powerhouse. Understand DOM manipulation, fetch data, and build interactive features.</Link>
                             
                         </div>
                     </div>
@@ -68,7 +68,7 @@ export default function Ferm() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">Frameworks</h5>
-                            <a class="card-text alpha" type="button" href="https://builtin.com/articles/web-development-frameworks" target="_blank"> React, Angular, Vue.js, Svelte pick your weapon and build amazing UIs for your website.</a>
+                            <Link class="card-text alpha" type="button" to="https://builtin.com/articles/web-development-frameworks" target="_blank"> React, Angular, Vue.js, Svelte pick your weapon and build amazing UIs for your website.</Link>
                         </div>
                     </div>
                 </div>
@@ -77,8 +77,8 @@ export default function Ferm() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">CSS Preprocessors </h5>
-                            <a class="card-text alpha" type="button" href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor" target="_blank">Bored with basic CSS?<br/>Use Sass, PostCSS, and more. Level up your styling game.</a>
-                            {/* <a href="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
+                            <Link class="card-text alpha" type="button" to="https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor" target="_blank">Bored with basic CSS?<br/>Use Sass, PostCSS, and more. Level up your styling game.</Link>
+                            
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ export default function Ferm() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">Git</h5>
-                            <a class="card-text alpha" type="button" href="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"> Continue your development journey,Git your code together! Explore Git,GitHub and collaboration workflows.</a>
+                            <Link class="card-text alpha" type="button" to="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"> Continue your development journey,Git your code together! Explore Git,GitHub and collaboration workflows.</Link>
                         </div>
                         </div>
                     </div>

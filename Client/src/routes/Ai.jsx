@@ -9,7 +9,7 @@ export default function DsAi() {
         <br/>
     <div className='container'> <h1 className='ttl'>AI and Data Scientist Roadmap</h1></div>
       <div className='container'>
-            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgai'/>
+            <img src={myimage} alt="imgbg" className='img-fluid align-items-center mx myimgai'/>
             </div>
             <div className='container'>
                 <h2 className='contentferm '><br/>
@@ -39,10 +39,10 @@ export default function DsAi() {
                         <div class="card-body">
                             <h5 class="card-title">Mathematics</h5>
                             <button class="card-text" type="button">Learn Calculus ,Differential Calculus and Linear Algebra to have the basic understanding required for Data Science.</button></div>
-                            <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.coursera.org/specializations/mathematics-machine-learning?irclickid=wEZQ:J0HUxyPRNswaUXVzwYzUkHQnjxYZ2hETQ0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=4863057&utm_content=b2c#courses" target="_blank"
-                        >Maths for Machine Learning</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text text-sm" href="https://www.coursera.org/learn/algebra-and-differential-calculus-for-data-science?irclickid=wEZQ:J0HUxyPRNswaUXVzwYzUkHQnjwoZ2hETQ0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=4863057&utm_content=b2c#syllabus" target="_blank" 
-                        >Algebra and Differential Calculus</a></div>
+                            <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.coursera.org/specializations/mathematics-machine-learning?irclickid=wEZQ:J0HUxyPRNswaUXVzwYzUkHQnjxYZ2hETQ0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=4863057&utm_content=b2c#courses" target="_blank"
+                        >Maths for Machine Learning</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text text-sm" to="https://www.coursera.org/learn/algebra-and-differential-calculus-for-data-science?irclickid=wEZQ:J0HUxyPRNswaUXVzwYzUkHQnjwoZ2hETQ0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=4863057&utm_content=b2c#syllabus" target="_blank" 
+                        >Algebra and Differential Calculus</Link></div>
                     </div>
                     <div class="col-xl-4 col-md-6">
                     <div class="card">
@@ -51,12 +51,12 @@ export default function DsAi() {
                             <h5 class="card-title">Statistics</h5>
                             <button class="card-text" type="button">Increase your knowledge with concepts of Probability ,Statistics and Testing. </button>
                         </div>
-                        <a className="btn btn-outline-light m-3  alpha card-text text-sm" href="https://www.coursera.org/learn/stanford-statistics" target="_blank" 
-                        >Introduction to Statistics</a>
-                        <a className="btn btn-outline-light m-3  alpha card-text text-sm" href="https://www.coursera.org/learn/machine-learning-probability-and-statistics" target="_blank" 
-                        >Probability and Statistics</a>
-                          <a className="btn btn-outline-light m-3  alpha card-text text-sm" href="https://www.coursera.org/learn/statistical-analysis-hypothesis-testing-sas" target="_blank" 
-                        >Hypothesis Testing</a>
+                        <Link className="btn btn-outline-light m-3  alpha card-text text-sm" to="https://www.coursera.org/learn/stanford-statistics" target="_blank" 
+                        >Introduction to Statistics</Link>
+                        <Link className="btn btn-outline-light m-3  alpha card-text text-sm" to="https://www.coursera.org/learn/machine-learning-probability-and-statistics" target="_blank" 
+                        >Probability and Statistics</Link>
+                          <Link className="btn btn-outline-light m-3  alpha card-text text-sm" to="https://www.coursera.org/learn/statistical-analysis-hypothesis-testing-sas" target="_blank" 
+                        >Hypothesis Testing</Link>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6">
@@ -64,13 +64,13 @@ export default function DsAi() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div className="card-body">
                             <h5 className="card-title">Econometrics</h5>
-                            <button class="card-text" type="button">Explore the Fundamentals of Econometrics and learn various series and models.</button>
-                            {/* <a href="https://www.google.com/"><b>Click here to Learn More</b></a> */}
+                            <h5 class="card-text alpha" type="button">Explore the Fundamentals of Econometrics and learn various series and models.</h5>
+                            {/* <a to="https://www.google.com/"><b>Click here to Learn More</b></a> */}
                         </div>
-                        <a className="btn btn-outline-light m-3  alpha card-text text-sm" href="https://bookdown.org/ts_robinson1994/10EconometricTheorems/" target="_blank" 
-                        >Fundamentals of Econometrics</a>
-                        <a className="btn btn-outline-light m-3  alpha card-text text-sm" href="https://www.coursera.org/learn/erasmus-econometrics" target="_blank" 
-                        >Econometrics Methods and Applications</a>
+                        <Link className="btn btn-outline-light m-3  alpha card-text text-sm" to="https://bookdown.org/ts_robinson1994/10EconometricTheorems/" target="_blank" 
+                        >Fundamentals of Econometrics</Link>
+                        <Link className="btn btn-outline-light m-3  alpha card-text text-sm" to="https://www.coursera.org/learn/erasmus-econometrics" target="_blank" 
+                        >Econometrics Methods and Applications</Link>
                     </div>
                 </div>
                 <div className="row align-items-start">
@@ -80,14 +80,14 @@ export default function DsAi() {
                         <div class="card-body">
                             <h5 class="card-title">Coding</h5>
                             <button class="card-text" type="button"> Learn Python ,Data Structures and Algorithms and SQL</button>
-                            {/* <a href="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
+                            {/* <a to="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
                         </div>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="/notes/Python.pdf" target="_blank"
-                        >Python</a>
-                         <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.sqltutorial.org/" target="_blank"
-                        >SQL</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="/notes/DSA.pdf" target="_blank"
-                        >Data Structures and Algorithms </a>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="/notes/Python.pdf" target="_blank"
+                        >Python</Link>
+                         <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.sqltutorial.org/" target="_blank"
+                        >SQL</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="/notes/DSA.pdf" target="_blank"
+                        >Data Structures and Algorithms </Link>
                     </div>
                 </div>
                <div class="col-xl-4 col-md-6">
@@ -97,10 +97,10 @@ export default function DsAi() {
                             <h5 class="card-title">Machine Learning</h5>
                             <button class="card-text" gitype="button">Use your coding to skills and develop machine learning models.</button>
                         </div>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.ibm.com/topics/machine-learning" target="_blank"
-                        >Introduction to Machine Learning</a>
-                           <a className="btn btn-outline-light m-3 alpha card-text" href="https://mlcourse.ai/" target="_blank"
-                        >Machine Learning</a>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.ibm.com/topics/machine-learning" target="_blank"
+                        >Introduction to Machine Learning</Link>
+                           <Link className="btn btn-outline-light m-3 alpha card-text" to="https://mlcourse.ai/" target="_blank"
+                        >Machine Learning</Link>
 
                     </div>
                 </div>
@@ -109,7 +109,7 @@ export default function DsAi() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">MLOps</h5>
-                            <a  class="card-text alpha" type="button" href="https://ml-ops.org/" target="_blank"> Simplify Machine Learning worlflows and deployments through MLOps.</a>
+                            <Link  class="card-text alpha" type="button" to="https://ml-ops.org/" target="_blank"> Simplify Machine Learning worlflows and deployments through MLOps.</Link>
                         </div>
                         </div>
                     </div>

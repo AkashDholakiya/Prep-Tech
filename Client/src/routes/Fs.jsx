@@ -9,7 +9,7 @@ export default function Fs() {
         <div className='container my-1'>
       <h1>Fullstack Development Roadmap</h1></div>
       <div className='container'>
-            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgb'/>
+            <img src={myimage} alt="imgbg" className='img-fluid align-items-center mx myimgb'/>
             </div>
             <div className='container'>
                 <h2 className='contentferm '><br/>
@@ -37,23 +37,23 @@ export default function Fs() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">HTML, CSS and JavaScript</h5>
-                            <a class="card-text alpha" type="button" href="#" target="_blank">Learn the basics of HTML (Hypertext Markup Language), CSS (Cascading Style Sheets), and JavaScript.</a></div>
-                            <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="/notes/HTML.pdf" target="_blank">HTML</a>
-                            <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="/notes/CSS_Complete_Notes.pdf" target="_blank">CSS</a>
-                            <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="/notes/JS.pdf" target="_blank">JavaScript</a></div>
+                            <Link class="card-text alpha" type="button" to="#" target="_blank">Learn the basics of HTML (Hypertext Markup Language), CSS (Cascading Style Sheets), and JavaScript.</Link></div>
+                            <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="/notes/HTML.pdf" target="_blank">HTML</Link>
+                            <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="/notes/CSS_Complete_Notes.pdf" target="_blank">CSS</Link>
+                            <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="/notes/JS.pdf" target="_blank">JavaScript</Link></div>
                     </div>
                     <div class="col-xl-4 col-md-6">
                     <div class="card">
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">Frameworks</h5>
-                            <a class="card-text alpha" type="button" href="https://builtin.com/articles/web-development-frameworks" target="_blank"> React, Angular, Vue.js, Svelte—pick your weapon and build amazing UIs for your website.</a>
+                            <Link class="card-text alpha" type="button" to="https://builtin.com/articles/web-development-frameworks" target="_blank"> React, Angular, Vue.js, Svelte—pick your weapon and build amazing UIs for your website.</Link>
                            
                         </div>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://www.w3schools.com/REACT/" target="_blank">React</a>
-                            <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="/https://www.w3schools.com/REACT/" target="_blank">Angular</a>
-                            <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="/https://www.w3schools.com/VUE/" target="_blank">Vue.Js</a>
-                            <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="/https://learn.svelte.dev/tutorial/welcome-to-svelte" target="_blank">Svelte</a>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://www.w3schools.com/REACT/" target="_blank">React</Link>
+                            <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="/https://www.w3schools.com/REACT/" target="_blank">Angular</Link>
+                            <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="/https://www.w3schools.com/VUE/" target="_blank">Vue.Js</Link>
+                            <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="/https://learn.svelte.dev/tutorial/welcome-to-svelte" target="_blank">Svelte</Link>
                     </div>
                 </div>
                     <div class="col-xl-4 col-md-6">
@@ -61,14 +61,14 @@ export default function Fs() {
                        
                         <div class="card-body">
                             <h5 class="card-title">Infrastructure and Automation</h5>
-                            <button class="card-text" type="button"> Dive into infrastructure as code using tools like Ansible and Terraform.Set up monitoring using tools like Monit.Deploy your applications.</button>
+                            <h5 class="card-text alpha" type="button"> Dive into infrastructure as code using tools like Ansible and Terraform.Set up monitoring using tools like Monit.Deploy your applications.</h5>
                         </div>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.ansible.com/" target="_blank"
-                        >Ansible</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://www.terraform.io/" target="_blank" 
-                        >Terraform</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://mmonit.com/monit/" target="_blank"
-                        >Monit</a>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.ansible.com/" target="_blank"
+                        >Ansible</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://www.terraform.io/" target="_blank" 
+                        >Terraform</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://mmonit.com/monit/" target="_blank"
+                        >Monit</Link>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6">
@@ -77,7 +77,7 @@ export default function Fs() {
                         <div class="card-body">
                             <h5 class="card-title">Front-End Development</h5>
                             <Link class="card-text alpha" type="button" to="/ferm">Dive into component-based architecture, state management, and routing.Explore responsive design and accessibility principles.</Link>
-                            {/* <a href="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
+                            {/* <a to="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
                         </div>
                     </div>
                 </div>

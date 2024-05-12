@@ -14,7 +14,7 @@ export default function Backend1() {
                 <h1>Backend Development Roadmap</h1>
             </div>
             <div className='container'>
-            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgb'></img>
+            <img src={myimage} alt="My Img" className='img-fluid align-items-center mx myimgb'></img>
             </div>
             <div>
                 <h2 className='contentferm'><br/>
@@ -42,14 +42,14 @@ export default function Backend1() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">Programming Languages</h5>
-                            <Link class="card-text alpha" type="button" >Master languages like Node.js, Python, Ruby, and Java. Understand their ecosystems and best practices for clean, efficient code.</Link></div><a className="btn btn-outline-light m-3 alpha card-text" href="/notes/Python.pdf" target="_blank"
-                        >Python</a>
-                         <a className="btn btn-outline-light m-3 alpha card-text" href="/notes/JAVA.pdf" target="_blank" to="/ferm"
-                        >Java</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://www.w3schools.com/nodejs/" target="_blank" to="/ferm"
-                        >Node.JS</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.ruby-lang.org/en/documentation/" target="_blank" to="/ferm"
-                        >Ruby</a></div>
+                            <Link class="card-text alpha" type="button" >Master languages like Node.js, Python, Ruby, and Java. Understand their ecosystems and best practices for clean, efficient code.</Link></div><Link className="btn btn-outline-light m-3 alpha card-text" to="/notes/Python.pdf" target="_blank"
+                        >Python</Link>
+                         <Link className="btn btn-outline-light m-3 alpha card-text" to="/notes/JAVA.pdf" target="_blank" 
+                        >Java</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://www.w3schools.com/nodejs/" target="_blank" 
+                        >Node.JS</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.ruby-lang.org/en/documentation/" target="_blank" 
+                        >Ruby</Link></div>
                     </div>
                   
                
@@ -58,16 +58,16 @@ export default function Backend1() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">SQL Databases</h5>
-                            <a class="card-text alpha" type="button" href="https://www.ibm.com/topics/relational-databases" target="_blank">Learn to design robust databases with SQL solutions. Manage data transactions and optimize performance for scalability.</a>
-                        </div><a className="btn btn-outline-light m-3 alpha card-text" href="/notes/MySQl.pdf" target="_blank"
-                        >MySQL</a>
-                         <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.mariadbtutorial.com/" target="_blank"
-                        >MariaDB</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://learn.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15" target="_blank" 
-                        >MS SQL</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.youtube.com/watch?v=ObbNGhcxXJA" target="_blank" to="/ferm"
-                        >Oracle</a>
-                          <Link className="btn btn-outline-light m-3 alpha card-text" href="#" target="_blank" to="/pgs"
+                            <Link class="card-text alpha" type="button" to="https://www.ibm.com/topics/relational-databases" target="_blank">Learn to design robust databases with SQL solutions. Manage data transactions and optimize performance for scalability.</Link>
+                        </div><Link className="btn btn-outline-light m-3 alpha card-text" to="/notes/MySQl.pdf" target="_blank"
+                        >MySQL</Link>
+                         <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.mariadbtutorial.com/" target="_blank"
+                        >MariaDB</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://learn.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15" target="_blank" 
+                        >MS SQL</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.youtube.com/watch?v=ObbNGhcxXJA" target="_blank" 
+                        >Oracle</Link>
+                          <Link className="btn btn-outline-light m-3 alpha card-text"  target="_blank" to="/pgs"
                         >PostgreSQL</Link>
                     </div>
                 </div>
@@ -76,36 +76,28 @@ export default function Backend1() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">NoSQL Databases</h5>
-                            <a class="card-text alpha" type="button" href="https://www.ibm.com/topics/relational-databases" target="_blank">Learn to Manage data transactions and optimize performance for scalability.</a>
-                        </div><a className="btn btn-outline-light m-3 alpha card-text" href="https://www.mongodb.com/docs/" target="_blank"
-                        >MongoDB</a>
-                         <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.influxdata.com/time-series-database/" target="_blank"
-                        >InfluxDB</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://neo4j.com/docs/getting-started/get-started-with-neo4j/graph-database/" target="_blank" 
-                        >Neo4j</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://cassandra.apache.org/_/index.html" target="_blank"
-                        >Cassandra</a>
+                            <Link class="card-text alpha" type="button" to="https://www.ibm.com/topics/relational-databases" target="_blank">Learn to Manage data transactions and optimize performance for scalability.</Link>
+                        </div><Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.mongodb.com/docs/" target="_blank"
+                        >MongoDB</Link>
+                         <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.influxdata.com/time-series-database/" target="_blank"
+                        >InfluxDB</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://neo4j.com/docs/getting-started/get-started-with-neo4j/graph-database/" target="_blank" 
+                        >Neo4j</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://cassandra.apache.org/_/index.html" target="_blank"
+                        >Cassandra</Link>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md- m-3">
                     <div class="card">
-                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                       
                         <div class="card-body">
                             <h5 class="card-title">APIs and Middleware </h5>
-                            <a class="card-text alpha" href="https://www.ibm.com/topics/api" target="_blank" type="button"> Develop RESTful APIs and understand middleware’s role in request handling. Ensure secure data exchange between the server and clients.</a>
-                            {/* <a href="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
-                      
+                            <Link class="card-text alpha" to="https://www.ibm.com/topics/api" target="_blank" type="button"> Develop RESTful APIs and understand middleware’s role in request handling. Ensure secure data exchange between the server and clients.</Link>
                     </div>
                 </div>
                 
                 </div>
-                {/* <div class="col-xl-3 col-md-6 m-2">
-                    <div className="row-md">
-                        
-                    </div>
                 
-                        
-                </div> */}
                  <div class="col-xl-3 col-md-6 m-3">
                     <div className="card">
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
@@ -114,12 +106,12 @@ export default function Backend1() {
                             <button className="card-text"> Learn about the services which help developers know about issue tracking, code review, and continuous integration features.</button>
                        
                         </div>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"
-                        >Github</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://about.gitlab.com/" target="_blank" 
-                        >Gitlab</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://bitbucket.org/product/guides/getting-started/overview" target="_blank"
-                        >BitBucket</a>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"
+                        >Github</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://about.gitlab.com/" target="_blank" 
+                        >Gitlab</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://bitbucket.org/product/guides/getting-started/overview" target="_blank"
+                        >BitBucket</Link>
                     </div>
                     
                 </div>
@@ -131,7 +123,6 @@ export default function Backend1() {
                         <div className="card-body">
                             <h5 className="card-title">Server Management</h5>
                             <button className="card-text"> Get comfortable with server setup, configuration, and deployment. Explore cloud services like AWS, Azure, and Google Cloud.</button>
-                            {/* <a href="https://www.google.com/"><b>Click here to Learn More</b></a> */}
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import "../css/Ferm.css"
 import myimage from "../img/img9.jpg"
+import { Link } from 'react-router-dom'
 export default function PostG() {
   return (
     <div>
@@ -8,7 +9,7 @@ export default function PostG() {
       <h1 class='ttl'>PostgreSQL Roadmap</h1>
       </div>
       <div className='container'>
-            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgb'/>
+            <img src={myimage} alt="imgbg" className='img-fluid align-items-center mx myimgb'/>
             </div>
             <div className='container'>
                 <h2 className='contentferm '><br/>
@@ -35,18 +36,18 @@ export default function PostG() {
             <div className="row align-items-start gx-1">
                 <div class="col-xl-4 col-md-6 my-2">
                     <div class="card">
-                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                       
                         <div class="card-body">
                             <h5 class="card-title">Databases</h5>
-                            <a class="card-text alpha" type="button" href="https://www.ibm.com/topics/relational-databases">Learn about basic Database structure and RDBMS concepts</a></div></div>
+                            <Link class="card-text alpha" type="button" to="https://www.ibm.com/topics/relational-databases">Learn about basic Database structure and RDBMS concepts</Link></div></div>
                     </div>
                     <div class="col-xl-4 col-md-6 my-2">
                     <div class="card">
-                        {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                       
                         <div class="card-body">
                             <h5 class="card-title">SQL</h5>
                             
-                            <a class="card-text alpha" type="button" href="https://www.w3schools.com/sql/">Learn SQL concepts and get to know how to operate the tables and schemas.</a>
+                            <Link class="card-text alpha" type="button" to="https://www.w3schools.com/sql/">Learn SQL concepts and get to know how to operate the tables and schemas.</Link>
                            
                         </div>
                     </div>
@@ -56,7 +57,7 @@ export default function PostG() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div className="card-body">
                             <h5 className="card-title">PostgreSQL Security Concepts</h5>
-                            <a class="card-text alpha" type="button" href="https://www.timescale.com/learn/guide-to-postgresql-security" target="_blank">Read about different models and concepts in PostgreSQL Security</a>
+                            <Link class="card-text alpha" type="button" to="https://www.timescale.com/learn/guide-to-postgresql-security" target="_blank">Read about different models and concepts in PostgreSQL Security</Link>
                             
                         </div>
                     </div>
@@ -67,13 +68,13 @@ export default function PostG() {
                      
                         <div className="card-body">
                             <h5 className="card-title">Application Skills</h5>
-                            <a class="card-text alpha" type="button" href="https://www.timescale.com/learn/guide-to-postgresql-security" target="_blank">Learn about migrations, practical patterns and antipatterns, and how to use migration tools like liquibase, sqitch, Bytebase, and ora2pg.
-                            Learn about queues and practical patterns and antipatterns</a>
+                            <Link class="card-text alpha" type="button" to="https://www.timescale.com/learn/guide-to-postgresql-security" target="_blank">Learn about migrations, practical patterns and antipatterns, and how to use migration tools like liquibase, sqitch, Bytebase, and ora2pg.
+                            Learn about queues and practical patterns and antipatterns</Link>
                             
                         </div>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://docs.liquibase.com/start/tutorials/home.html" target="_blank">Liquibase</a>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://medium.com/@james_mensch/database-source-control-versioning-and-environment-management-with-sqitch-b71b4a9067f0" target="_blank">Sqitch</a>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://www.bytebase.com/tutorial/" target="_blank">Bytebase</a>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://docs.liquibase.com/start/tutorials/home.html" target="_blank">Liquibase</Link>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://medium.com/@james_mensch/database-source-control-versioning-and-environment-management-with-sqitch-b71b4a9067f0" target="_blank">Sqitch</Link>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://www.bytebase.com/tutorial/" target="_blank">Bytebase</Link>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 my-2">
@@ -81,11 +82,11 @@ export default function PostG() {
                      
                         <div className="card-body">
                             <h5 className="card-title">Advanced Topics</h5>
-                            <a class="card-text alpha" type="button" href="https://docs.hydra.so/concepts/oltp-olap-and-htap" target="_blank">Learn about advanced SQL topics, including PL/pgSQL, triggers, aggregate and window functions, procedures and functions recursive CTE<br/>Understand fine-grained tuning, including per-user, per-database settings, storage parameters, and workload-dependent tuning for OLTP, OLAP, and HTAP</a>
+                            <Link class="card-text alpha" type="button" to="https://docs.hydra.so/concepts/oltp-olap-and-htap" target="_blank">Learn about advanced SQL topics, including PL/pgSQL, triggers, aggregate and window functions, procedures and functions recursive CTE<br/>Understand fine-grained tuning, including per-user, per-database settings, storage parameters, and workload-dependent tuning for OLTP, OLAP, and HTAP</Link>
                             
                         </div>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://www.kaggle.com/learn/advanced-sql" target="_blank">Advanced SQL</a>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://www.postgresqltutorial.com/postgresql-plpgsql/" target="_blank">PL/pg SQL</a>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://www.kaggle.com/learn/advanced-sql" target="_blank">Advanced SQL</Link>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://www.postgresqltutorial.com/postgresql-plpgsql/" target="_blank">PL/pg SQL</Link>
                         
                     </div>
                 </div>
@@ -94,11 +95,10 @@ export default function PostG() {
                      
                         <div className="card-body">
                             <h5 className="card-title">Troubleshooting Techniques</h5>
-                            <a class="card-text alpha" type="button" href="https://www.cybertec-postgresql.com/en/how-to-interpret-postgresql-explain-analyze-output/" target="_blank">Learn how to analyze queries using EXPLAIN, Depesz, PEV2 and how to use troubleshooting methods like USE, RED, and Golden Signals<br/>Understand SQL optimization techniques, including indexes and their use cases, and how to identify and fix SQL query patterns and anti-patterns.<br/>Learn about schema design patterns and anti-patterns</a>
+                            <Link class="card-text alpha" type="button" to="https://www.cybertec-postgresql.com/en/how-to-interpret-postgresql-explain-analyze-output/" target="_blank">Learn how to analyze queries using EXPLAIN, Depesz, PEV2 and how to use troubleshooting methods like USE, RED, and Golden Signals<br/>Understand SQL optimization techniques, including indexes and their use cases, and how to identify and fix SQL query patterns and anti-patterns.<br/>Learn about schema design patterns and anti-patterns</Link>
                             
                         </div>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://www.depesz.com/" target="_blank">Depesz</a>
-                        <a class="btn btn-outline-light m-3 alpha card-text" type="button" href="https://roadmap.sh/postgresql-dba/troubleshooting-techniques/query-analysis/pev20" target="_blank">PEV2</a>
+                        <Link class="btn btn-outline-light m-3 alpha card-text" type="button" to="https://www.depesz.com/" target="_blank">Depesz</Link>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 my-2">
@@ -106,7 +106,7 @@ export default function PostG() {
                      
                         <div className="card-body">
                             <h5 className="card-title">Infrastructure Skills</h5>
-                            <a class="card-text alpha" type="button" href="/notes/PSIS.pdf" target="_blank">Learn about replication, including streaming replication and logical replication, and how to use pg_dump, pg_dumpall, pg_restore, and pg_basebackup for backup and recover</a>
+                            <Link class="card-text alpha" type="button" to="/notes/PSIS.pdf" target="_blank">Learn about replication, including streaming replication and logical replication, and how to use pg_dump, pg_dumpall, pg_restore, and pg_basebackup for backup and recover</Link>
                             
                         </div>
                     </div>

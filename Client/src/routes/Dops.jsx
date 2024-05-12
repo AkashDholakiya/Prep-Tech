@@ -10,7 +10,7 @@ export default function Dops() {
         <div className='container my-1'>
       <h1>DevOps Roadmap</h1></div>
       <div className='container'>
-            <img src={myimage} alt="My Image" className='img-fluid align-items-center mx myimgb'/>
+            <img src={myimage} alt="imgbg" className='img-fluid align-items-center mx myimgb'/>
             </div>
             <div className='container'>
                 <h2 className='contentferm '><br/>
@@ -21,7 +21,7 @@ export default function Dops() {
                      What Is DevOps?</h2>
                     <h2 className='contentferm'>
                     DevOps is a methodology that combines software development (Dev) and IT operations (Ops) with the goal of shortening the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. It emphasizes collaboration, automation, and integration, leading to faster and more reliable software delivery. DevOps practices include continuous integration, continuous delivery, and infrastructure as code.<br/></h2>
-                   
+<br/>                   
 <h2 className='myconthead'>
                      Navigating the Roadmap
                      </h2>
@@ -39,12 +39,12 @@ export default function Dops() {
                         <div class="card-body">
                             <h5 class="card-title">Version Control and Git</h5>
                             <button class="card-text" type="button">Understand Git fundamentals: commits, branches, merges, and pull requests.Explore platforms like GitHub, GitLab, or Bitbucket for collaborative development.
-                            </button></div><a className="btn btn-outline-light m-3 alpha card-text" href="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"
-                        >Github</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://about.gitlab.com/" target="_blank" 
-                        >Gitlab</a>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://bitbucket.org/product/guides/getting-started/overview" target="_blank"
-                        >BitBucket</a></div>
+                            </button></div><Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank"
+                        >Github</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://about.gitlab.com/" target="_blank" 
+                        >Gitlab</Link>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://bitbucket.org/product/guides/getting-started/overview" target="_blank"
+                        >BitBucket</Link></div>
                     </div>
                     <div class="col-xl-4 col-md-6">
                     <div class="card">
@@ -53,14 +53,14 @@ export default function Dops() {
                             <h5 class="card-title">Continuous Integration and<br/> Continuous Deployment
 </h5>
                             <button class="card-text" type="button">Set up CI/CD pipelines using tools like Jenkins, GitLab CI/CD, or Travis CI.<br/>Automate testing, build, and deployment processes. </button>
-                            {/* <a href="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
+                            {/* <a to="https://www.google.com/" ><b>Click here to Learn More</b></a> */}
                         </div>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.simplilearn.com/tutorials/jenkins-tutorial" target="_blank"
-                        >Jenkins</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://about.gitlab.com/" target="_blank" 
-                        >Gitlab</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://docs.travis-ci.com/user/tutorial/" target="_blank" 
-                        > Travis CI</a>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.simplilearn.com/tutorials/jenkins-tutorial" target="_blank"
+                        >Jenkins</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://about.gitlab.com/" target="_blank" 
+                        >Gitlab</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://docs.travis-ci.com/user/tutorial/" target="_blank" 
+                        > Travis CI</Link>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6">
@@ -71,12 +71,12 @@ export default function Dops() {
                             <button class="card-text" type="button"> Study cloud providers like AWS, Azure, or Google Cloud Platform and their services to strengthen your cloud computing skills.
 </button>
                         </div>
-                        <a className="btn btn-outline-light m-3 alpha card-text" href="https://www.w3schools.com/aws/" target="_blank"
-                        >AWS</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://www.simplilearn.com/tutorials/azure-tutorial" target="_blank" 
-                        >Azure</a>
-                         <a className="btn btn-outline-light m-3  alpha card-text" href="https://www.freecodecamp.org/news/google-cloud-platform-from-zero-to-hero/" target="_blank" 
-                        > Google Cloud</a>
+                        <Link className="btn btn-outline-light m-3 alpha card-text" to="https://www.w3schools.com/aws/" target="_blank"
+                        >AWS</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://www.simplilearn.com/tutorials/azure-tutorial" target="_blank" 
+                        >Azure</Link>
+                         <Link className="btn btn-outline-light m-3  alpha card-text" to="https://www.freecodecamp.org/news/google-cloud-platform-from-zero-to-hero/" target="_blank" 
+                        > Google Cloud</Link>
                     </div>
                 </div>
                
@@ -90,10 +90,10 @@ export default function Dops() {
 </button>
                     
                         </div>
-                        <a className="btn btn-outline-light m-3  alpha card-text" href="https://docs.docker.com/get-started/" target="_blank" 
-                        > Docker</a>
-                        <a className="btn btn-outline-light m-3  alpha card-text" href="https://kubernetes.io/docs/tutorials/kubernetes-basics/" target="_blank" 
-                        > Kubernetes</a>
+                        <Link className="btn btn-outline-light m-3  alpha card-text" to="https://docs.docker.com/get-started/" target="_blank" 
+                        > Docker</Link>
+                        <Link className="btn btn-outline-light m-3  alpha card-text" to="https://kubernetes.io/docs/tutorials/kubernetes-basics/" target="_blank" 
+                        > Kubernetes</Link>
                     </div>
                 </div>
                <div class="col-xl-4 col-md-6">
@@ -101,8 +101,8 @@ export default function Dops() {
                         {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
                         <div class="card-body">
                             <h5 class="card-title">Networking & Security</h5>
-                            <a class="card-text alpha" type="button" href="https://aws.amazon.com/what-is/devsecops/" target="_blank">Learn networking protocols and security patterns to ensure secure software delivery
-</a>
+                            <Link class="card-text alpha" type="button" to="https://aws.amazon.com/what-is/devsecops/" target="_blank">Learn networking protocols and security patterns to ensure secure software delivery
+</Link>
 
                         </div>
                     </div>
@@ -114,10 +114,10 @@ export default function Dops() {
                             <h5 class="card-title">Infrastructure as Code</h5>
                             <button class="card-text" type="button">  Learn IaC tools like Terraform or Ansible to automate infrastructure provisioning</button>
                         </div>
-                        <a className="btn btn-outline-light m-3  alpha card-text" href="https://developer.hashicorp.com/terraform/tutorials" target="_blank" 
-                        >Terraform</a>
-                        <a className="btn btn-outline-light m-3  alpha card-text" href="https://docs.ansible.com/ansible/latest/getting_started/index.html" target="_blank" 
-                        > Ansible</a>
+                        <Link className="btn btn-outline-light m-3  alpha card-text" to="https://developer.hashicorp.com/terraform/tutorials" target="_blank" 
+                        >Terraform</Link>
+                        <Link className="btn btn-outline-light m-3  alpha card-text" to="https://docs.ansible.com/ansible/latest/getting_started/index.html" target="_blank" 
+                        > Ansible</Link>
                         </div>
                     </div>
                 </div>
