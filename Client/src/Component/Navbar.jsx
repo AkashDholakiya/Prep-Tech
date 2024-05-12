@@ -46,7 +46,7 @@ function Navbaar() {
           </div>
           <Nav>
             {!(localStorage.getItem("role") === "Interviewer") && <Link to='/roadmap' style={{ ...linkstyle, ...location.pathname.includes('/roadmap') ? addthis : nullstate }}>Roadmap</Link>}
-            <Link to='/interview' style={{ ...linkstyle, ...location.pathname.includes("/interview") ? addthis : nullstate }}>Interview</Link>
+            {localStorage.getItem("role") && <Link to='/interview' style={{ ...linkstyle, ...location.pathname.includes("/interview") ? addthis : nullstate }}>Interview</Link>}
             <Link to='/about' style={{ ...linkstyle, ...location.pathname.includes('/about') ? addthis : nullstate }}>About</Link>
           </Nav>
           <Nav>
