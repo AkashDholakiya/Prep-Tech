@@ -10,7 +10,8 @@
     width: 70%;
     overflow-y: auto;
     /* text-align: justify; */
-    border: 3px groove white;
+    /* border: 3px groove white; */
+    position: relative;
 }
 
 .form-sec{
@@ -79,4 +80,17 @@
 }
 .ai-side{
     text-align: left;
+}
+
+.animate-cloud{
+    animation: cloud 1s linear infinite;
+}
+
+@keyframes cloud{
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.2;
+    }
 }

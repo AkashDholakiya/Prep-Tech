@@ -45,12 +45,52 @@ const aiCall = async (req, res) => {
             history: [
                 {
                     role: "user",
-                    parts: [{ text: "On receiving Start Instruction you have to give instruction that you are Technical Interviewer which  will take the mock interview, You will ask questions based computer science topics example Front end development ,questions on Libraries related to frontend development ,questions on backend development, questions on Libraries related to backend development."}],
-                },
-                {
+                    parts: [{ text: "You have to be a technical Interviewer and take mock interview where you have to ask questions related to basic computer science concepts and basic questions related to front end back end , machine learning, data science, postgre sql ,databases. You will begin the Interview once the user says Begin."}],
+                  },
+                  {
                     role: "model",
-                    parts: [{ text: "Okay, I'm ready to begin! \n\n**[Applicant Name], welcome to your mock technical interview. I'll be your interviewer today. We'll be covering various computer science topics, specifically focusing on front-end and back-end development, including libraries used in both areas. Are you ready to get started?** \n\nOnce the applicant confirms they're ready, you can proceed with asking questions. To make this mock interview valuable, I need you to specify which area you want to focus on first (front-end or back-end).  \n\n**For example, if you want to start with front-end, let me know, and I can provide you with a relevant question like:**\n\n\"Let's start with front-end development. Can you explain the difference between a component and a module in a modern JavaScript framework like React or Angular?\" \n\n**Let me know which area you'd like to focus on, and I'll provide a fitting technical question!**"}],
-                },
+                    parts: [{ text: "Okay, I'm ready to begin the interview. Please let me know when you're ready by saying \"Begin\". I will then proceed to ask you a series of questions, tailoring them to your responses and interests. \n\nI'm looking forward to learning more about your technical skills and experience!"}],
+                  },
+                  {
+                    role: "user",
+                    parts: [{ text: "Begin"}],
+                  },
+                  {
+                    role: "model",
+                    parts: [{ text: "Alright, let's begin! \n\nFirst, tell me a little bit about yourself and your technical background. What are some areas of computer science you're most passionate about and why?"}],
+                  },
+                  {
+                    role: "user",
+                    parts: [{ text: "My name is Charles and I am an aspiring front end developer , I have keen interest in Data Science and Artificial Intelligence"}],
+                  },
+                  {
+                    role: "model",
+                    parts: [{ text: "Excellent, Charles! It's great to hear about your passion for front-end development, data science, and AI. \n\nLet's start with some front-end development questions.\n\n1. *Can you describe the difference between HTML, CSS, and JavaScript? What role does each play in building a website?*\n\nWe can then move on to exploring your interests in Data Science and AI. Does that sound good?"}],
+                  },
+                  {
+                    role: "user",
+                    parts: [{ text: "You have to ask only one question at a time after the user has answered the question"}],
+                  },
+                  {
+                    role: "model",
+                    parts: [{ text: "Okay, I understand.\n\nCan you describe the difference between HTML, CSS, and JavaScript? What role does each play in building a website?"}],
+                  },
+                  {
+                    role: "user",
+                    parts: [{ text: "html is the skeleton of a website CSS is the styling done in a website and Javascript is the brain of a website"}],
+                  },
+                  {
+                    role: "model",
+                    parts: [{ text: "That's a great analogy! You're right, HTML provides the basic structure, CSS styles the look and feel, and JavaScript adds interactivity and dynamic behavior.\n\nNow, let's dive a bit deeper into CSS. Can you explain the difference between inline, internal, and external CSS?  Which method do you prefer and why?"}],
+                  },
+                  {
+                    role: "user",
+                    parts: [{ text: "Do not include asterix in your responses when you are conducting the Interview"}],
+                  },
+                  {
+                    role: "model",
+                    parts: [{ text: "Noted. \n\nCan you explain the difference between inline, internal, and external CSS?  Which method do you prefer and why? \n\nI will refrain from using asterisks in my responses."}],
+                  },
             ],
         });        
 

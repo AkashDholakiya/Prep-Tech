@@ -23,7 +23,6 @@ import ReactN from './routes/Rn'
 import './App.css'
 
 function App() {
-  const [loader , setLoader] = useState(false);
   const [show, setShow] = useState(false);
 
   return (
@@ -38,7 +37,7 @@ function App() {
             <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
             <Route path="/verify/:id/:token" element={<VerifyEmail />} />
             <Route path='/interview' element={<Interview/>} />
-            <Route path='/interview/ai-inter' element={<Mockinter loader={loader} setLoader={setLoader} />}/>
+            <Route path='/interview/ai-inter' element={<Mockinter />}/>
             <Route path='/interview/p2p-inter' element={<P2PInter />}/>
             <Route path='/ferm' element={<Ferm />} />
             <Route path='/backend1' element={<Backend1 />} />

@@ -1,19 +1,25 @@
 import React, {  useEffect,useRef, useState } from 'react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { Form } from 'react-bootstrap'
 import { VscDebugStart } from "react-icons/vsc";
 import { IoMdClose } from "react-icons/io";
 import Speech from 'react-speech';
+import aiImage from '../img/ai_robot.svg'
+import Person from '../img/person_with_ai.svg'
+import talkCloud from '../img/talk_cloud.svg'
 import '../css/ai_mock_inter.css'
 
 
 
 // var counter = 0;
 
-const Mockinter = (props) => {
+const Mockinter = () => {
     const { transcript, listening, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
-    const divref = useRef(null);
+    // const divref = useRef(null);
     const speechRef = useRef(null);
+    const [robot, setRobot] = useState(false);
+    const [person, setPerson] = useState(false);
+    const [splash, setSplash] = useState(true);
+    const [counter, setCounter] = useState(3);
     const [text, setText] = useState('');
     const [res, setRes] = useState('');
 
@@ -21,12 +27,23 @@ const Mockinter = (props) => {
         if (!browserSupportsSpeechRecognition) { 
             return <span>Browser doesn't support speech recognition.</span>;
         }
+ 
+        const Inter = setTimeout(() => {
+            handleSubmit({ preventDefault: () => {} });
+        }, 3000);
+
+
         if (transcript) {
             setText(...[transcript]);
+            // setCounter(0);
+            clearTimeout(Inter?.current);
             console.log(text);
         }
          
 
+        return () => {
+            clearTimeout(Inter);
+        }
         // eslint-disable-next-line
     } , [transcript])
 
@@ -35,23 +52,26 @@ const Mockinter = (props) => {
         const rsPlayButton = document.querySelector('.rs-play');
         rsPlayButton.id = 'rs-play';
 
-
+        setTimeout(() => {
+            setSplash(false);
+        }, 3000);
         // eslint-disable-next-line 
+
+        return () => {
+            clearTimeout();
+        }
     }, [])
     
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(text);
         if(!text){
             return;
         }
-        props.setLoader(true)
         
-        const div = document.createElement('div');
-        div.className = 'user-side';
-        div.innerHTML = text;
-        divref.current.appendChild(div);
-        
+        setRobot(true);
+        setPerson(false);
         const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/ai-call/ques`, {
             method: 'POST',
             headers: {
@@ -61,47 +81,65 @@ const Mockinter = (props) => {
         })
             
         const val = await res.json();
-        let val2 = val.result.replace("[Applicant Name]", "")
-        val2 = val2.replace("*", "")
-        val2 = val2.replace("|", "")
-        val2 = val2.replace("-", "")
-        console.log(val.result)
+        let val2 = val.result
+        val2 = val2.replace(/\*/g, '')
+                       .replace(/\|/g, '')
+                       .replace(/-/g, '');
+        
+        const wordPerMin = 150;
+        const time = val2.split(' ').length / wordPerMin;
+        const inSecond = time * 60 ;
 
         setRes(val2); 
         setText('');
         resetTranscript();
-        props.setLoader(false)
-        const div2 = document.createElement('div');
-        div2.className = 'ai-side';
-        div2.innerHTML = val2;
-        divref.current.appendChild(div2);
 
         setTimeout(() => {
             document.getElementById('rs-play').click();
         }, 1000);
         
+        setTimeout(() => {
+            setRobot(false);
+            setPerson(true);
+        }, inSecond * 1000);
+
     }
 
+    const HandleStart = () => {
+        SpeechRecognition.startListening({ continuous: true })
+        setPerson(true)
+    }
+
+    if(splash){
+        setTimeout(() => {
+            setCounter(counter - 1);
+        }, 1000);
+    }
+ 
     return (
         <div className='d-flex justify-content-center align-items-center my-2 ai-main'>
-            <div className='area p-3'> 
+            {splash && <>
+                <h1>
+                    hold on we're loading this page in {counter} seconds
+                </h1>   
+            </>}
+            <div className={`area p-3 ${splash && 'd-none'}`}> 
                 <div className='d-none'> 
                     <Speech text={res} ref={speechRef} voice="Google UK English"/>
                 </div> 
                 <div className="btn-sec d-flex">
-                    <button className="mx-1" onClick={SpeechRecognition.stopListening}>Stop <IoMdClose /></button>
+                    <button className="mx-1" onClick={() => {SpeechRecognition.stopListening(); setPerson(false)}}>Stop <IoMdClose /></button>
                     {/* <button className='mx-2' onClick={resetTranscript}>Reset <GrPowerReset /></button> */}
-                    <button className="mx-1" onClick={() => SpeechRecognition.startListening({ continuous: true })}>Start <VscDebugStart /></button>
+                    <button className="mx-1" onClick={HandleStart}>Start <VscDebugStart /></button>
                 </div>
                 {listening ? <span>🎙️</span> : <span>🛑</span>}
-                <div ref={divref} className='main-inter-part my-3'>
-                    {props.loader && <p>loading...</p>}
+                <div className="d-flex justify-content-center">
+                    <img style={{position:"absolute",top:"50px",left:"50px",transform:"rotate3d(0,1,1,-45deg) rotateX(40deg)"}} src={aiImage} alt="ai robot" width={350} height={350} />
+                    <img style={{position:"absolute",bottom:"60px",right:"60px"}} src={Person} alt="Person" width={300} height={350} />
+                    {person && <img className='animate-cloud rounded-circle' style={{bottom:"350px",right:"10px",position:"absolute",transform:"scaleX(1)"}} src={talkCloud} alt="talk cloud" width={100} height={100} />}
+                    {robot && <img className='animate-cloud rounded-circle' style={{top:"50px",left:"40px",position:"absolute",transform:"scaleX(-1)"}} src={talkCloud} alt="talk cloud" width={100} height={100} />}
                 </div>
-                <Form className='form-sec d-flex' onSubmit={handleSubmit}>
-                    <Form.Control placeholder="Enter question" value={text} onChange={(e) => {setText(e.target.value)}} />
-                    <button type="submit">&#8593;</button>
-                </Form>
-            </div>
+            </div> 
         </div>
     )
 }
