@@ -4,7 +4,8 @@ import '../css/home.css'
 import MyComponent from './slideshow';
 import myimage from '../img/img2.jpg'
 import img from '../img/img19.jpg'
-const Home = () => {
+
+const Home = ({show, setShow}) => {
   return (
     <div className='home'>
       <header>
@@ -28,10 +29,20 @@ const Home = () => {
             <Link to='/roadmap'>
 
               <img src={myimage} alt="img-2" className='img-fluid d-flex myimg' /></Link></div><br />
-          <p><b>Interview System:</b> Our interview system is designed to help you prepare for technical interviews. We offer a range of practice questions, tips, and strategies to help you succeed.<div className='container-lg'>
-            <Link to='/interview'>
+          <p><b>Interview System:</b> Our interview system is designed to help you prepare for technical interviews. We offer a range of practice questions, tips, and strategies to help you succeed.
+          
+          <div className='container-lg'>
 
-              <img src={img} alt="img-1" className='img-fluid d-flex myimg my-2' /></Link></div></p>
+            {localStorage.getItem("username") ? <Link to='/interview'>
+                <img src={img} alt="img-1" className='img-fluid d-flex myimg my-2' />
+            </Link> : 
+            <Link to='/' onClick={() => setShow(true)}>
+              <img src={img} alt="img-1" className='img-fluid d-flex myimg my-2' />
+            </Link>
+            }
+          </div>
+          
+          </p>
           At PrepTech, we're committed to helping you succeed in computer science. Our resources are designed to be accessible and affordable, and we're always adding new content to help you stay up-to-date with the latest developments in the field.
           <p>So why wait? Start exploring PrepTech today and take the first step towards a successful career in computer science!</p>  </div>  </section>
 

@@ -25,8 +25,8 @@ const Mockinter = (props) => {
             setText(...[transcript]);
             console.log(text);
         }
-        
-        console.log(speechRef.current); 
+         
+
         // eslint-disable-next-line
     } , [transcript])
 
@@ -35,6 +35,8 @@ const Mockinter = (props) => {
         const rsPlayButton = document.querySelector('.rs-play');
         rsPlayButton.id = 'rs-play';
 
+
+        // eslint-disable-next-line 
     }, [])
     
 
@@ -59,14 +61,19 @@ const Mockinter = (props) => {
         })
             
         const val = await res.json();
-        setRes(val.result); 
-        console.log(val);
+        let val2 = val.result.replace("[Applicant Name]", "")
+        val2 = val2.replace("*", "")
+        val2 = val2.replace("|", "")
+        val2 = val2.replace("-", "")
+        console.log(val.result)
+
+        setRes(val2); 
         setText('');
         resetTranscript();
         props.setLoader(false)
         const div2 = document.createElement('div');
         div2.className = 'ai-side';
-        div2.innerHTML = val.result;
+        div2.innerHTML = val2;
         divref.current.appendChild(div2);
 
         setTimeout(() => {

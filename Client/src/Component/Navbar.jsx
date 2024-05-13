@@ -7,8 +7,8 @@ import ForgotPass from '../routes/ForgotPass';
 import '../css/nav_style.css'
 import { useState } from 'react';
 
-function Navbaar() {
-  const [show, setShow] = useState(false);
+function Navbaar({show, setShow}) {
+  // const [show, setShow] = useState(false);
   const [showsignup,setshowsignup] = useState(true); 
   const [showlogin,setshowlogin] = useState(false); 
   const [showforgot,setshowforgot] = useState(false); 

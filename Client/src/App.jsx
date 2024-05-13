@@ -24,14 +24,15 @@ import './App.css'
 
 function App() {
   const [loader , setLoader] = useState(false);
+  const [show, setShow] = useState(false);
 
   return (
     <div className="App">     
       <BrowserRouter>  
         <div id='main-content'> 
-          <Navbaar/>
+          <Navbaar show={show} setShow={setShow}/>
           <Routes>   
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home show={show} setShow={setShow} />} />
             <Route path="/about" element={<About />} />
             <Route path="/roadmap" element={<Roadmap/>}/>
             <Route path="/reset-password/:id/:token" element={<ResetPassword />} />

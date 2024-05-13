@@ -63,6 +63,11 @@ const P2PInter = () => {
       } 
     )
 
+    
+    window.addEventListener('beforeunload', (e) => {
+      e.preventDefault();
+    });
+
     // eslint-disable-next-line
   }, [])
 
@@ -212,8 +217,8 @@ const P2PInter = () => {
         <div>
           {receivingCall && !callAccepted ? (
             <div className='d-flex flex-column justify-content-center align-items-center'>
-              <h2 className='p-5 display-6'>{name} is calling...</h2>
-              <Button onClick={answerCall}>Answer</Button>
+              <h2 >{name} is calling...</h2>
+              <button className='p-2 mt-2' style={{backgroundColor:"#0d6efd", borderRadius:"5px", border:"none"}} onClick={answerCall}>Answer</button>
             </div>
           ) : null}
         </div>
