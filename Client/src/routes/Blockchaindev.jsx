@@ -51,7 +51,7 @@ export default function Bcd() {
                         >Python</Link>
                          <Link className="btn btn-outline-light m-2 alpha card-text" to="/notes/JS.pdf" target="_blank"
                         >JavaScript</Link>
-                         <Link className="btn btn-outline-light m-2 alpha card-text" to="/https://www.w3schools.com/go/" target="_blank"
+                         <Link className="btn btn-outline-light m-2 alpha card-text" to="https://www.w3schools.com/go/" target="_blank"
                         >GO</Link>
                     </div>
                 </div>
@@ -109,11 +109,11 @@ export default function Bcd() {
               </div>
               <div className='container'>
                 <br></br>
-                <h2 className='mycont'>  Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br /></h2>
+                <h2 className='mycont text-center'>  Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br /></h2>
               
-<h2 className='mycont'>                
+<h2 className='mycont text-center'>                
 Ready to embark on your Blockchain adventure? Let’s dive in!</h2><h2 className='fig1'>👩‍💻</h2>
-<h2 className='mycont'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring Blockchain developers! </h2>
+<h2 className='mycont text-center'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring Blockchain developers! </h2>
     </div></div>
   )
 }

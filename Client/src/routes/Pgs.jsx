@@ -117,11 +117,11 @@ export default function PostG() {
             </div>
             <br></br>
             <div className='container'>
-                <h2 className='mycont'>  Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br /></h2>
+                <h2 className='mycont text-center'>  Remember, this roadmap isn’t a strict linear path. Feel free to explore, experiment, and specialize based on your interests.<br /></h2>
 
-                <h2 className='mycont'>
+                <h2 className='mycont text-center'>
                     Ready to embark on your Learning Adventure? Let’s dive in!</h2><h2 className='fig1'>👩‍💻</h2>
-                <h2 className='mycont'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring developers! </h2></div>
+                <h2 className='mycont text-center'>Feel free to customize and expand upon this introduction to create an inviting and informative roadmap page for aspiring developers! </h2></div>
         </div>
     )
 }
