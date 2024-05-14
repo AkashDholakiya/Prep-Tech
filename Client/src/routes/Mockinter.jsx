@@ -120,7 +120,7 @@ const Mockinter = () => {
         <div className='d-flex justify-content-center align-items-center my-2 ai-main'>
             {splash && <>
                 <h1>
-                    hold on we're loading this page in {counter} seconds
+                    Hold on We're loading this page in {counter} seconds
                 </h1>   
             </>}
             <div className={`area p-3 ${splash && 'd-none'}`}> 
@@ -134,7 +134,7 @@ const Mockinter = () => {
                 </div>
                 {listening ? <span>🎙️</span> : <span>🛑</span>}
                 <div className="d-flex justify-content-center">
-                    <img style={{position:"absolute",top:"50px",left:"50px",transform:"rotate3d(0,1,1,-45deg) rotateX(40deg)"}} src={aiImage} alt="ai robot" width={350} height={350} />
+                    <img style={{position:"absolute",top:"50px",left:"50px",transform:"rotate3d(0,1,1,-20deg) rotateX(30deg)"}} src={aiImage} alt="ai robot" width={350} height={350} />
                     <img style={{position:"absolute",bottom:"60px",right:"60px"}} src={Person} alt="Person" width={300} height={350} />
                     {person && <img className='animate-cloud rounded-circle' style={{bottom:"350px",right:"10px",position:"absolute",transform:"scaleX(1)"}} src={talkCloud} alt="talk cloud" width={100} height={100} />}
                     {robot && <img className='animate-cloud rounded-circle' style={{top:"50px",left:"40px",position:"absolute",transform:"scaleX(-1)"}} src={talkCloud} alt="talk cloud" width={100} height={100} />}

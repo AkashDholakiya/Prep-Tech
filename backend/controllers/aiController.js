@@ -61,11 +61,11 @@ const aiCall = async (req, res) => {
                   },
                   {
                     role: "user",
-                    parts: [{ text: "My name is Charles and I am an aspiring front end developer , I have keen interest in Data Science and Artificial Intelligence"}],
+                    parts: [{ text: "I am an aspiring front end developer , I have keen interest in Data Science and Artificial Intelligence"}],
                   },
                   {
                     role: "model",
-                    parts: [{ text: "Excellent, Charles! It's great to hear about your passion for front-end development, data science, and AI. \n\nLet's start with some front-end development questions.\n\n1. *Can you describe the difference between HTML, CSS, and JavaScript? What role does each play in building a website?*\n\nWe can then move on to exploring your interests in Data Science and AI. Does that sound good?"}],
+                    parts: [{ text: "Excellent, It's great to hear about your passion for front-end development, data science, and AI. \n\nLet's start with some front-end development questions.\n\n1. *Can you describe the difference between HTML, CSS, and JavaScript? What role does each play in building a website?*\n\nWe can then move on to exploring your interests in Data Science and AI. Does that sound good?"}],
                   },
                   {
                     role: "user",
@@ -75,22 +75,22 @@ const aiCall = async (req, res) => {
                     role: "model",
                     parts: [{ text: "Okay, I understand.\n\nCan you describe the difference between HTML, CSS, and JavaScript? What role does each play in building a website?"}],
                   },
-                  {
-                    role: "user",
-                    parts: [{ text: "html is the skeleton of a website CSS is the styling done in a website and Javascript is the brain of a website"}],
-                  },
-                  {
-                    role: "model",
-                    parts: [{ text: "That's a great analogy! You're right, HTML provides the basic structure, CSS styles the look and feel, and JavaScript adds interactivity and dynamic behavior.\n\nNow, let's dive a bit deeper into CSS. Can you explain the difference between inline, internal, and external CSS?  Which method do you prefer and why?"}],
-                  },
-                  {
-                    role: "user",
-                    parts: [{ text: "Do not include asterix in your responses when you are conducting the Interview"}],
-                  },
-                  {
-                    role: "model",
-                    parts: [{ text: "Noted. \n\nCan you explain the difference between inline, internal, and external CSS?  Which method do you prefer and why? \n\nI will refrain from using asterisks in my responses."}],
-                  },
+                  // {
+                  //   role: "user",
+                  //   parts: [{ text: "html is the skeleton of a website CSS is the styling done in a website and Javascript is the brain of a website"}],
+                  // },
+                  // {
+                  //   role: "model",
+                  //   parts: [{ text: "That's a great analogy! You're right, HTML provides the basic structure, CSS styles the look and feel, and JavaScript adds interactivity and dynamic behavior.\n\nNow, let's dive a bit deeper into CSS. Can you explain the difference between inline, internal, and external CSS?  Which method do you prefer and why?"}],
+                  // },
+                  // {
+                  //   role: "user",
+                  //   parts: [{ text: "Do not include asterix in your responses when you are conducting the Interview"}],
+                  // },
+                  // {
+                  //   role: "model",
+                  //   parts: [{ text: "Noted. \n\nCan you explain the difference between inline, internal, and external CSS?  Which method do you prefer and why? \n\nI will refrain from using asterisks in my responses."}],
+                  // },
             ],
         });        
 
